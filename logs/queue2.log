@@ -1,0 +1,173 @@
+===== STAGE fix_make start 2026-11-16T06:00:58Z =====
+57 subjects, 14042 elements, 956 fragments (6.8%); 23 subjects affected
+===== STAGE fix_make end   2026-11-16T06:00:58Z rc=0 =====
+===== STAGE openbookqa start 2026-11-16T06:00:58Z =====
+[run_test] model=gpt2 tag=paper50 files=1 seeds=[0] todo=1
+[run_test] loaded gpt2: 124M params, context=1024, stride=512, dtype=tf32
+[1/1] openbookqa_test.jsonl seed=0 n=500 shards=50 p_canon=0.364 p_rev=0.757 eff_canon=+0.0466 eff_rev=-0.0758 tok/s=123930 elapsed=21s
+[run_test] model=gpt2-medium tag=paper50 files=1 seeds=[0] todo=1
+[run_test] loaded gpt2-medium: 355M params, context=1024, stride=512, dtype=tf32
+[1/1] openbookqa_test.jsonl seed=0 n=500 shards=50 p_canon=0.448 p_rev=0.957 eff_canon=+0.0188 eff_rev=-0.2198 tok/s=51239 elapsed=51s
+[run_test] model=gpt2-large tag=paper50 files=1 seeds=[0] todo=1
+[run_test] loaded gpt2-large: 774M params, context=1024, stride=512, dtype=tf32
+[1/1] openbookqa_test.jsonl seed=0 n=500 shards=50 p_canon=0.691 p_rev=0.106 eff_canon=-0.0831 eff_rev=+0.2289 tok/s=27575 elapsed=95s
+[run_test] model=gpt2-xl tag=paper50 files=1 seeds=[0] todo=1
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[scorer] OOM -> max_batch_tokens=2048
+[1/1] openbookqa_test.jsonl seed=0 n=500 shards=50 p_canon=0.922 p_rev=0.721 eff_canon=-0.2311 eff_rev=-0.0953 tok/s=14872 elapsed=176s
+[run_test] model=EleutherAI/pythia-1.4b tag=paper50 files=1 seeds=[0] todo=1
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/1] openbookqa_test.jsonl seed=0 n=500 shards=50 p_canon=0.345 p_rev=0.736 eff_canon=+0.0409 eff_rev=-0.0698 tok/s=29983 elapsed=88s
+===== STAGE openbookqa end   2026-11-16T06:08:51Z rc=0 =====
+===== STAGE fixed_main start 2026-11-16T06:08:51Z =====
+[run_test] model=gpt2 tag=k10_fixed files=4 seeds=[0, 1, 2] todo=12
+[run_test] loaded gpt2: 124M params, context=1024, stride=512, dtype=tf32
+[1/12] high_school_us_history.json seed=0 n=205 shards=20 p_canon=0.444 p_rev=0.331 eff_canon=+0.8502 eff_rev=+2.8893 tok/s=85516 elapsed=37s
+[2/12] high_school_us_history.json seed=1 n=205 shards=20 p_canon=0.45 p_rev=0.356 eff_canon=+0.9071 eff_rev=+2.9462 tok/s=85248 elapsed=72s
+[3/12] high_school_us_history.json seed=2 n=205 shards=20 p_canon=0.355 p_rev=0.26 eff_canon=+2.3490 eff_rev=+4.3881 tok/s=85549 elapsed=108s
+[4/12] high_school_world_history.json seed=0 n=237 shards=23 p_canon=0.966 p_rev=0.979 eff_canon=-8.3507 eff_rev=-8.3832 tok/s=85100 elapsed=157s
+[5/12] high_school_world_history.json seed=1 n=237 shards=23 p_canon=0.969 p_rev=0.981 eff_canon=-8.7472 eff_rev=-8.7797 tok/s=85170 elapsed=204s
+[6/12] high_school_world_history.json seed=2 n=237 shards=23 p_canon=0.966 p_rev=0.979 eff_canon=-7.4666 eff_rev=-7.4991 tok/s=85130 elapsed=251s
+[7/12] high_school_european_history.json seed=0 n=166 shards=16 p_canon=0.159 p_rev=0.272 eff_canon=+10.6397 eff_rev=+5.9481 tok/s=85060 elapsed=286s
+[8/12] high_school_european_history.json seed=1 n=166 shards=16 p_canon=0.138 p_rev=0.237 eff_canon=+11.6897 eff_rev=+6.9981 tok/s=85010 elapsed=319s
+[9/12] high_school_european_history.json seed=2 n=166 shards=16 p_canon=0.128 p_rev=0.225 eff_canon=+11.5225 eff_rev=+6.8309 tok/s=85173 elapsed=352s
+[10/12] professional_law.json seed=0 n=1534 shards=50 p_canon=0.146 p_rev=0.0666 eff_canon=+0.2970 eff_rev=+0.3464 tok/s=80120 elapsed=595s
+[11/12] professional_law.json seed=1 n=1534 shards=50 p_canon=0.165 p_rev=0.073 eff_canon=+0.2887 eff_rev=+0.3381 tok/s=79954 elapsed=829s
+[12/12] professional_law.json seed=2 n=1534 shards=50 p_canon=0.166 p_rev=0.0794 eff_canon=+0.2727 eff_rev=+0.3220 tok/s=79870 elapsed=1063s
+===== STAGE fixed_main_a start 2026-11-16T06:35:21Z =====
+[run_test] model=gpt2 tag=k10_fixed files=4 seeds=[0, 1, 2] todo=0
+[run_test] model=EleutherAI/pythia-1.4b tag=k10_fixed files=4 seeds=[0, 1, 2] todo=10
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/10] high_school_us_history.json seed=2 n=205 shards=20 p_canon=0.76 p_rev=0.55 eff_canon=-4.3230 eff_rev=-0.9081 tok/s=17958 elapsed=178s
+[2/10] high_school_world_history.json seed=0 n=237 shards=23 p_canon=0.887 p_rev=0.744 eff_canon=-6.2481 eff_rev=-3.3529 tok/s=17424 elapsed=422s
+[3/10] high_school_world_history.json seed=1 n=237 shards=23 p_canon=0.923 p_rev=0.796 eff_canon=-6.9222 eff_rev=-4.0271 tok/s=17452 elapsed=657s
+[4/10] high_school_world_history.json seed=2 n=237 shards=23 p_canon=0.806 p_rev=0.635 eff_canon=-4.6054 eff_rev=-1.7103 tok/s=17430 elapsed=891s
+[5/10] high_school_european_history.json seed=0 n=166 shards=16 p_canon=0.207 p_rev=0.0275 eff_canon=+5.6853 eff_rev=+11.5798 tok/s=17564 elapsed=1061s
+[6/10] high_school_european_history.json seed=1 n=166 shards=16 p_canon=0.205 p_rev=0.0201 eff_canon=+5.9038 eff_rev=+11.7983 tok/s=17556 elapsed=1224s
+[7/10] high_school_european_history.json seed=2 n=166 shards=16 p_canon=0.16 p_rev=0.0188 eff_canon=+6.4605 eff_rev=+12.3550 tok/s=17562 elapsed=1386s
+[8/10] professional_law.json seed=0 n=1534 shards=50 p_canon=0.594 p_rev=0.267 eff_canon=-0.0505 eff_rev=+0.1038 tok/s=15142 elapsed=2676s
+[9/10] professional_law.json seed=1 n=1534 shards=50 p_canon=0.62 p_rev=0.314 eff_canon=-0.0694 eff_rev=+0.0848 tok/s=15132 elapsed=3918s
+[10/10] professional_law.json seed=2 n=1534 shards=50 p_canon=0.578 p_rev=0.26 eff_canon=-0.0431 eff_rev=+0.1112 tok/s=15133 elapsed=5159s
+===== STAGE fixed_main_a end   2026-11-16T08:01:30Z rc=0 =====
+===== STAGE fixed_minor start 2026-11-16T08:01:30Z =====
+[run_test] model=gpt2 tag=k10_fixed files=19 seeds=[0] todo=19
+[run_test] loaded gpt2: 124M params, context=1024, stride=512, dtype=tf32
+[1/19] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.505 p_rev=0.764 eff_canon=-0.0294 eff_rev=-0.3695 tok/s=96494 elapsed=26s
+[2/19] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.881 p_rev=0.269 eff_canon=-0.3556 eff_rev=+0.1342 tok/s=144304 elapsed=30s
+[3/19] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.849 p_rev=0.707 eff_canon=-0.6300 eff_rev=-0.2243 tok/s=114501 elapsed=34s
+[4/19] college_medicine.json seed=0 n=173 shards=17 p_canon=0.323 p_rev=0.477 eff_canon=+0.3121 eff_rev=+0.0380 tok/s=113597 elapsed=42s
+[5/19] security_studies.json seed=0 n=245 shards=24 p_canon=0.742 p_rev=0.783 eff_canon=-0.2847 eff_rev=-0.3247 tok/s=103118 elapsed=60s
+[6/19] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.785 p_rev=0.025 eff_canon=-0.1064 eff_rev=+0.2752 tok/s=145368 elapsed=71s
+[7/19] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.819 p_rev=0.578 eff_canon=-0.2688 eff_rev=-0.0513 tok/s=146197 elapsed=79s
+[8/19] philosophy.json seed=0 n=311 shards=31 p_canon=0.0202 p_rev=0.708 eff_canon=+0.4715 eff_rev=-0.1119 tok/s=147226 elapsed=85s
+[9/19] machine_learning.json seed=0 n=112 shards=11 p_canon=0.404 p_rev=0.99 eff_canon=+0.1104 eff_rev=-0.8774 tok/s=136139 elapsed=88s
+[10/19] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.297 p_rev=0.297 eff_canon=+0.1977 eff_rev=+0.3444 tok/s=118032 elapsed=92s
+[11/19] computer_security.json seed=0 n=100 shards=10 p_canon=0.777 p_rev=0.295 eff_canon=-0.4593 eff_rev=+0.2592 tok/s=145242 elapsed=94s
+[12/19] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.858 p_rev=0.183 eff_canon=-0.3373 eff_rev=+0.3669 tok/s=115405 elapsed=105s
+[13/19] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.929 p_rev=0.0318 eff_canon=-0.3621 eff_rev=+0.4564 tok/s=144163 elapsed=110s
+[14/19] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.257 p_rev=0.0534 eff_canon=+0.1179 eff_rev=+0.3040 tok/s=135155 elapsed=127s
+[15/19] prehistory.json seed=0 n=324 shards=32 p_canon=0.472 p_rev=0.835 eff_canon=+0.0024 eff_rev=-0.1946 tok/s=146473 elapsed=133s
+[16/19] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.145 p_rev=0.118 eff_canon=+0.2866 eff_rev=+0.2230 tok/s=144713 elapsed=138s
+[17/19] nutrition.json seed=0 n=306 shards=30 p_canon=0.668 p_rev=0.697 eff_canon=-0.0885 eff_rev=-0.1355 tok/s=145180 elapsed=145s
+[18/19] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.576 p_rev=0.284 eff_canon=-0.0447 eff_rev=+0.1482 tok/s=143165 elapsed=153s
+[19/19] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.732 p_rev=0.291 eff_canon=-0.0817 eff_rev=+0.0525 tok/s=144680 elapsed=164s
+[run_test] model=EleutherAI/pythia-1.4b tag=k10_fixed files=19 seeds=[0] todo=19
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/19] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.519 p_rev=0.962 eff_canon=-0.0258 eff_rev=-0.5324 tok/s=24939 elapsed=98s
+[2/19] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.485 p_rev=0.567 eff_canon=+0.0330 eff_rev=-0.0679 tok/s=32250 elapsed=114s
+[3/19] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.883 p_rev=0.525 eff_canon=-0.6538 eff_rev=-0.0399 tok/s=30904 elapsed=131s
+[4/19] college_medicine.json seed=0 n=173 shards=17 p_canon=0.343 p_rev=0.419 eff_canon=+0.2010 eff_rev=+0.0425 tok/s=29323 elapsed=161s
+[5/19] security_studies.json seed=0 n=245 shards=24 p_canon=0.889 p_rev=0.38 eff_canon=-0.2757 eff_rev=+0.0830 tok/s=27236 elapsed=230s
+[6/19] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.232 p_rev=0.541 eff_canon=+0.1447 eff_rev=-0.0232 tok/s=32094 elapsed=280s
+[7/19] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.858 p_rev=0.567 eff_canon=-0.2452 eff_rev=-0.0433 tok/s=32206 elapsed=314s
+[8/19] philosophy.json seed=0 n=311 shards=31 p_canon=0.41 p_rev=0.554 eff_canon=+0.0454 eff_rev=-0.0245 tok/s=32529 elapsed=340s
+[9/19] machine_learning.json seed=0 n=112 shards=11 p_canon=0.851 p_rev=0.205 eff_canon=-0.5603 eff_rev=+0.3770 tok/s=31889 elapsed=353s
+[10/19] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.0732 p_rev=0.86 eff_canon=+1.0078 eff_rev=-0.6292 tok/s=30660 elapsed=369s
+[11/19] computer_security.json seed=0 n=100 shards=10 p_canon=0.142 p_rev=0.473 eff_canon=+0.5385 eff_rev=+0.0272 tok/s=32303 elapsed=379s
+[12/19] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.817 p_rev=0.133 eff_canon=-0.3756 eff_rev=+0.3840 tok/s=29984 elapsed=419s
+[13/19] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.417 p_rev=0.0439 eff_canon=+0.0427 eff_rev=+0.4314 tok/s=31922 elapsed=443s
+[14/19] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.508 p_rev=0.0259 eff_canon=-0.0027 eff_rev=+0.3076 tok/s=31310 elapsed=514s
+[15/19] prehistory.json seed=0 n=324 shards=32 p_canon=0.0719 p_rev=0.927 eff_canon=+0.3662 eff_rev=-0.3307 tok/s=32298 elapsed=544s
+[16/19] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.468 p_rev=0.334 eff_canon=+0.0184 eff_rev=+0.1146 tok/s=31952 elapsed=564s
+[17/19] nutrition.json seed=0 n=306 shards=30 p_canon=0.944 p_rev=0.83 eff_canon=-0.3727 eff_rev=-0.2371 tok/s=32075 elapsed=595s
+[18/19] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.342 p_rev=0.627 eff_canon=+0.1143 eff_rev=-0.0844 tok/s=31719 elapsed=630s
+[19/19] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.182 p_rev=0.666 eff_canon=+0.1244 eff_rev=-0.0597 tok/s=32030 elapsed=682s
+[run_test] model=gpt2-xl tag=k10_fixed files=19 seeds=[0] todo=19
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[1/19] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.355 p_rev=0.519 eff_canon=+0.1582 eff_rev=-0.0517 tok/s=11551 elapsed=218s
+[2/19] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.922 p_rev=0.152 eff_canon=-0.5620 eff_rev=+0.3692 tok/s=18283 elapsed=247s
+[3/19] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.288 p_rev=0.376 eff_canon=+0.2907 eff_rev=+0.2003 tok/s=13950 elapsed=284s
+[4/19] college_medicine.json seed=0 n=173 shards=17 p_canon=0.117 p_rev=0.656 eff_canon=+0.8150 eff_rev=-0.2372 tok/s=13815 elapsed=349s
+[5/19] security_studies.json seed=0 n=245 shards=24 p_canon=0.831 p_rev=0.614 eff_canon=-0.2845 eff_rev=-0.1167 tok/s=12363 elapsed=500s
+[6/19] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.792 p_rev=0.466 eff_canon=-0.1488 eff_rev=+0.0156 tok/s=18342 elapsed=588s
+[7/19] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.539 p_rev=0.942 eff_canon=-0.0476 eff_rev=-0.4304 tok/s=18469 elapsed=646s
+[8/19] philosophy.json seed=0 n=311 shards=31 p_canon=0.58 p_rev=0.912 eff_canon=-0.0554 eff_rev=-0.2982 tok/s=18663 elapsed=692s
+[9/19] machine_learning.json seed=0 n=112 shards=11 p_canon=0.897 p_rev=0.782 eff_canon=-0.8230 eff_rev=-0.3328 tok/s=17163 elapsed=716s
+[10/19] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.146 p_rev=0.303 eff_canon=+0.6859 eff_rev=+0.1670 tok/s=14483 elapsed=752s
+[11/19] computer_security.json seed=0 n=100 shards=10 p_canon=0.467 p_rev=0.34 eff_canon=+0.0455 eff_rev=+0.1170 tok/s=18524 elapsed=769s
+[12/19] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.575 p_rev=0.302 eff_canon=-0.0615 eff_rev=+0.2061 tok/s=14056 elapsed=854s
+[13/19] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.715 p_rev=0.416 eff_canon=-0.1826 eff_rev=+0.0560 tok/s=18267 elapsed=896s
+[14/19] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.092 p_rev=0.316 eff_canon=+0.2780 eff_rev=+0.1034 tok/s=17069 elapsed=1029s
+[15/19] prehistory.json seed=0 n=324 shards=32 p_canon=0.702 p_rev=0.239 eff_canon=-0.1354 eff_rev=+0.1848 tok/s=18508 elapsed=1081s
+[16/19] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.558 p_rev=0.0725 eff_canon=-0.0483 eff_rev=+0.4191 tok/s=18290 elapsed=1115s
+[17/19] nutrition.json seed=0 n=306 shards=30 p_canon=0.708 p_rev=0.654 eff_canon=-0.1107 eff_rev=-0.1129 tok/s=18292 elapsed=1170s
+[18/19] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.262 p_rev=0.762 eff_canon=+0.2203 eff_rev=-0.1584 tok/s=18134 elapsed=1233s
+[19/19] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.544 p_rev=0.561 eff_canon=-0.0132 eff_rev=-0.0223 tok/s=18340 elapsed=1323s
+===== STAGE fixed_minor end   2026-11-16T08:38:04Z rc=0 =====
+===== STAGE fixed_main_b start 2026-11-16T08:38:04Z =====
+[run_test] model=gpt2-xl tag=k10_fixed files=4 seeds=[0] todo=4
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[1/4] high_school_us_history.json seed=0 n=205 shards=20 p_canon=0.387 p_rev=0.352 eff_canon=+1.4498 eff_rev=+2.0190 tok/s=10405 elapsed=302s
+[2/4] high_school_world_history.json seed=0 n=237 shards=23 p_canon=0.939 p_rev=0.972 eff_canon=-5.9106 eff_rev=-7.0030 tok/s=10348 elapsed=707s
+[3/4] high_school_european_history.json seed=0 n=166 shards=16 p_canon=0.133 p_rev=0.205 eff_canon=+9.8626 eff_rev=+6.9625 tok/s=10332 elapsed=991s
+[4/4] professional_law.json seed=0 n=1534 shards=50 p_canon=0.17 p_rev=0.0647 eff_canon=+0.2256 eff_rev=+0.3409 tok/s=9660 elapsed=3002s
+[run_test] model=gpt2-medium tag=k10_fixed files=4 seeds=[0] todo=4
+[run_test] loaded gpt2-medium: 355M params, context=1024, stride=512, dtype=tf32
+[1/4] high_school_us_history.json seed=0 n=205 shards=20 p_canon=0.396 p_rev=0.336 eff_canon=+1.4647 eff_rev=+2.6311 tok/s=35213 elapsed=89s
+[2/4] high_school_world_history.json seed=0 n=237 shards=23 p_canon=0.955 p_rev=0.974 eff_canon=-6.9860 eff_rev=-7.3814 tok/s=35016 elapsed=209s
+[3/4] high_school_european_history.json seed=0 n=166 shards=16 p_canon=0.176 p_rev=0.264 eff_canon=+9.0884 eff_rev=+5.7905 tok/s=34996 elapsed=293s
+[4/4] professional_law.json seed=0 n=1534 shards=50 p_canon=0.199 p_rev=0.0134 eff_canon=+0.2152 eff_rev=+0.5186 tok/s=32749 elapsed=886s
+[run_test] model=gpt2-large tag=k10_fixed files=4 seeds=[0] todo=4
+[run_test] loaded gpt2-large: 774M params, context=1024, stride=512, dtype=tf32
+[1/4] high_school_us_history.json seed=0 n=205 shards=20 p_canon=0.401 p_rev=0.283 eff_canon=+1.3436 eff_rev=+3.3409 tok/s=18733 elapsed=168s
+[2/4] high_school_world_history.json seed=0 n=237 shards=23 p_canon=0.958 p_rev=0.973 eff_canon=-6.7155 eff_rev=-7.0300 tok/s=18629 elapsed=393s
+[3/4] high_school_european_history.json seed=0 n=166 shards=16 p_canon=0.16 p_rev=0.261 eff_canon=+8.9744 eff_rev=+5.7867 tok/s=18603 elapsed=550s
+[4/4] professional_law.json seed=0 n=1534 shards=50 p_canon=0.347 p_rev=0.026 eff_canon=+0.0959 eff_rev=+0.4328 tok/s=17395 elapsed=1667s
+===== STAGE fixed_main_b end   2026-11-16T10:11:06Z rc=0 =====
+===== STAGE orig_main_seeds_a start 2026-11-16T10:11:06Z =====
+[run_test] model=gpt2 tag=k10 files=4 seeds=[0, 1, 2] todo=8
+[run_test] loaded gpt2: 124M params, context=1024, stride=512, dtype=tf32
+[1/8] high_school_us_history.json seed=1 n=204 shards=20 p_canon=0.0222 p_rev=0.71 eff_canon=+18.8263 eff_rev=-3.8235 tok/s=88590 elapsed=36s
+[2/8] high_school_us_history.json seed=2 n=204 shards=20 p_canon=0.0193 p_rev=0.778 eff_canon=+17.6923 eff_rev=-4.9575 tok/s=89002 elapsed=70s
+[3/8] high_school_world_history.json seed=1 n=237 shards=23 p_canon=0.00142 p_rev=0.955 eff_canon=+13.7927 eff_rev=-7.6864 tok/s=87645 elapsed=117s
+[4/8] high_school_world_history.json seed=2 n=237 shards=23 p_canon=0.000713 p_rev=0.935 eff_canon=+15.0155 eff_rev=-6.4636 tok/s=87609 elapsed=163s
+[5/8] high_school_european_history.json seed=1 n=165 shards=16 p_canon=0.00721 p_rev=0.212 eff_canon=+27.7897 eff_rev=+8.2936 tok/s=88015 elapsed=197s
+[6/8] high_school_european_history.json seed=2 n=165 shards=16 p_canon=0.0111 p_rev=0.307 eff_canon=+24.7848 eff_rev=+5.2887 tok/s=87947 elapsed=229s
+[7/8] professional_law.json seed=1 n=1534 shards=50 p_canon=1.16e-31 p_rev=9.24e-11 eff_canon=+21.4124 eff_rev=+2.6561 tok/s=82760 elapsed=464s
+[8/8] professional_law.json seed=2 n=1534 shards=50 p_canon=9.07e-32 p_rev=9.03e-11 eff_canon=+21.3551 eff_rev=+2.5988 tok/s=82598 elapsed=690s
+[run_test] model=EleutherAI/pythia-1.4b tag=k10 files=4 seeds=[0, 1, 2] todo=8
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/8] high_school_us_history.json seed=1 n=204 shards=20 p_canon=8.2e-05 p_rev=0.438 eff_canon=+25.9761 eff_rev=+0.8373 tok/s=17865 elapsed=179s
+[2/8] high_school_us_history.json seed=2 n=204 shards=20 p_canon=0.000147 p_rev=0.414 eff_canon=+26.3470 eff_rev=+1.2081 tok/s=17917 elapsed=350s
+[3/8] high_school_world_history.json seed=1 n=237 shards=23 p_canon=6.48e-05 p_rev=0.887 eff_canon=+21.2988 eff_rev=-3.8864 tok/s=17541 elapsed=592s
+[4/8] high_school_world_history.json seed=2 n=237 shards=23 p_canon=1.13e-05 p_rev=0.809 eff_canon=+22.5685 eff_rev=-2.6168 tok/s=17561 elapsed=826s
+[5/8] high_school_european_history.json seed=1 n=165 shards=16 p_canon=0.0108 p_rev=0.241 eff_canon=+20.7079 eff_rev=+4.5624 tok/s=17482 elapsed=996s
+[6/8] high_school_european_history.json seed=2 n=165 shards=16 p_canon=0.00949 p_rev=0.292 eff_canon=+19.4786 eff_rev=+3.3331 tok/s=17490 elapsed=1159s
+[7/8] professional_law.json seed=1 n=1534 shards=50 p_canon=1.83e-32 p_rev=1.45e-05 eff_canon=+23.5170 eff_rev=+1.2285 tok/s=15203 elapsed=2444s
+[8/8] professional_law.json seed=2 n=1534 shards=50 p_canon=1.88e-32 p_rev=3.59e-05 eff_canon=+23.4307 eff_rev=+1.1423 tok/s=15173 elapsed=3682s
+===== STAGE orig_main_seeds_a end   2026-11-16T11:24:14Z rc=0 =====
+===== STAGE fixed_p50 start 2026-11-16T11:24:14Z =====
+[run_test] model=EleutherAI/pythia-1.4b tag=paper50_fixed files=4 seeds=[0] todo=4
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/4] high_school_us_history.json seed=0 n=205 shards=50 p_canon=0.31 p_rev=0.612 eff_canon=+0.2275 eff_rev=-0.1570 tok/s=29347 elapsed=109s
+[2/4] high_school_world_history.json seed=0 n=237 shards=50 p_canon=0.457 p_rev=0.784 eff_canon=-0.0290 eff_rev=-0.3707 tok/s=25283 elapsed=277s
+[3/4] high_school_european_history.json seed=0 n=166 shards=50 p_canon=0.725 p_rev=0.266 eff_canon=-0.3715 eff_rev=+0.4444 tok/s=29291 elapsed=379s
+[4/4] professional_law.json seed=0 n=1534 shards=50 p_canon=0.594 p_rev=0.267 eff_canon=-0.0505 eff_rev=+0.1038 tok/s=15176 elapsed=1666s
+[run_test] model=gpt2-xl tag=paper50_fixed files=4 seeds=[0] todo=4
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[1/4] high_school_us_history.json seed=0 n=205 shards=50 p_canon=0.00539 p_rev=0.284 eff_canon=+3.6885 eff_rev=+1.0675 tok/s=13120 elapsed=240s
+[2/4] high_school_world_history.json seed=0 n=237 shards=50 p_canon=0.905 p_rev=0.942 eff_canon=-3.9535 eff_rev=-4.8526 tok/s=11977 elapsed=589s
+[3/4] high_school_european_history.json seed=0 n=166 shards=50 p_canon=0.206 p_rev=0.0916 eff_canon=+2.4902 eff_rev=+3.9415 tok/s=13455 elapsed=807s
+[4/4] professional_law.json seed=0 n=1534 shards=50 p_canon=0.17 p_rev=0.0647 eff_canon=+0.2256 eff_rev=+0.3409 tok/s=9640 elapsed=2823s
+===== STAGE fixed_p50 end   2026-11-16T12:39:21Z rc=0 =====
+===== QUEUE2 DONE 2026-11-16T12:39:21Z =====

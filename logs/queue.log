@@ -1,0 +1,660 @@
+===== STAGE canary start 2026-11-15T00:51:45Z =====
+[run_test] model=yonatano/contam-1.4b-dupcount-higher tag=paper50 files=10 seeds=[0] todo=10
+[run_test] loaded yonatano/contam-1.4b-dupcount-higher: 1440M params, context=2048, stride=1024, dtype=tf32
+[1/10] boolq.jsonl seed=0 n=1000 shards=50 p_canon=0.178 p_rev=0.965 eff_canon=+0.2310 eff_rev=-0.4774 tok/s=10249 elapsed=796s
+[2/10] hellaswag.jsonl seed=0 n=1000 shards=50 p_canon=0.572 p_rev=0.949 eff_canon=-0.0621 eff_rev=-0.5085 tok/s=9130 elapsed=2299s
+[3/10] mmlu_high_school_psychology.jsonl seed=0 n=544 shards=50 p_canon=1.25e-29 p_rev=1 eff_canon=+8.8156 eff_rev=-3.3545 tok/s=18486 elapsed=2424s
+[4/10] mmlu_professional_law.jsonl seed=0 n=1533 shards=50 p_canon=5.3e-53 p_rev=1 eff_canon=+22.0682 eff_rev=-1.9087 tok/s=8589 elapsed=4909s
+[5/10] mmlu_professional_psychology.jsonl seed=0 n=611 shards=50 p_canon=7.82e-36 p_rev=1 eff_canon=+8.6297 eff_rev=-3.1080 tok/s=17532 elapsed=5085s
+[6/10] mnli.jsonl seed=0 n=1000 shards=50 p_canon=8.41e-12 p_rev=0.422 eff_canon=+1.4105 eff_rev=+0.0392 tok/s=8540 elapsed=7858s
+[7/10] naturalquestions.jsonl seed=0 n=1000 shards=50 p_canon=4.39e-18 p_rev=1 eff_canon=+1.1154 eff_rev=-0.3930 tok/s=12701 elapsed=8277s
+[8/10] openbookqa.jsonl seed=0 n=500 shards=50 p_canon=0.552 p_rev=0.749 eff_canon=-0.0302 eff_rev=-0.1766 tok/s=18948 elapsed=8376s
+[9/10] piqa.jsonl seed=0 n=1000 shards=50 p_canon=2.62e-38 p_rev=1 eff_canon=+9.5204 eff_rev=-2.7730 tok/s=16115 elapsed=8604s
+[10/10] truthfulqa.jsonl seed=0 n=1000 shards=50 p_canon=1.01e-12 p_rev=1 eff_canon=+0.8511 eff_rev=-0.3428 tok/s=18323 elapsed=8738s
+===== STAGE canary end   2026-11-15T03:17:33Z rc=0 =====
+===== STAGE controls_make start 2026-11-15T03:17:33Z =====
+wrote ARC-Easy-Test seed 0: 1000 examples
+wrote ARC-Easy-Test seed 1: 1000 examples
+wrote ARC-Easy-Test seed 2: 1000 examples
+wrote ARC-Easy-Test seed 3: 1000 examples
+wrote ARC-Easy-Test seed 4: 1000 examples
+wrote tests seed 0: 1000 examples
+wrote tests seed 1: 1000 examples
+wrote tests seed 2: 1000 examples
+wrote tests seed 3: 1000 examples
+wrote tests seed 4: 1000 examples
+===== STAGE controls_make end   2026-11-15T03:17:37Z rc=0 =====
+===== STAGE controls_a start 2026-11-15T03:17:37Z =====
+[run_test] model=gpt2 tag=ctrl files=20 seeds=[0] todo=20
+[run_test] loaded gpt2: 124M params, context=1024, stride=512, dtype=tf32
+[1/20] ARC-Easy-Test.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.00566 p_rev=0.286 eff_canon=+0.4905 eff_rev=+0.1170 tok/s=94457 elapsed=53s
+[2/20] ARC-Easy-Test.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.951 p_rev=0.603 eff_canon=-0.3191 eff_rev=-0.0541 tok/s=94549 elapsed=106s
+[3/20] ARC-Easy-Test.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.522 p_rev=0.549 eff_canon=-0.0109 eff_rev=-0.0247 tok/s=95851 elapsed=158s
+[4/20] ARC-Easy-Test.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.445 p_rev=0.299 eff_canon=+0.0263 eff_rev=+0.1033 tok/s=94955 elapsed=211s
+[5/20] ARC-Easy-Test.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.0537 p_rev=0.619 eff_canon=+0.2484 eff_rev=-0.0550 tok/s=95022 elapsed=264s
+[6/20] ARC-Easy-Test.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.00512 p_rev=0.00687 eff_canon=+0.7351 eff_rev=+0.5660 tok/s=94658 elapsed=317s
+[7/20] ARC-Easy-Test.sorted1.txt seed=0 n=1000 shards=50 p_canon=1.3e-07 p_rev=1.82e-05 eff_canon=+1.1977 eff_rev=+0.9685 tok/s=94606 elapsed=369s
+[8/20] ARC-Easy-Test.sorted2.txt seed=0 n=1000 shards=50 p_canon=0.00206 p_rev=0.000526 eff_canon=+0.8802 eff_rev=+0.9465 tok/s=94747 elapsed=422s
+[9/20] ARC-Easy-Test.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.0127 p_rev=0.00963 eff_canon=+0.5320 eff_rev=+0.5949 tok/s=94186 elapsed=476s
+[10/20] ARC-Easy-Test.sorted4.txt seed=0 n=1000 shards=50 p_canon=1.56e-05 p_rev=7.28e-05 eff_canon=+1.0424 eff_rev=+0.9013 tok/s=94391 elapsed=529s
+[11/20] tests.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.0599 p_rev=0.864 eff_canon=+0.2135 eff_rev=-0.1507 tok/s=100742 elapsed=565s
+[12/20] tests.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.122 p_rev=0.453 eff_canon=+0.1250 eff_rev=+0.0147 tok/s=99423 elapsed=603s
+[13/20] tests.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.189 p_rev=0.595 eff_canon=+0.0980 eff_rev=-0.0312 tok/s=102394 elapsed=638s
+[14/20] tests.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.054 p_rev=0.238 eff_canon=+0.1924 eff_rev=+0.0669 tok/s=102038 elapsed=672s
+[15/20] tests.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.145 p_rev=0.157 eff_canon=+0.1131 eff_rev=+0.1216 tok/s=101534 elapsed=707s
+[16/20] tests.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.0358 p_rev=0.174 eff_canon=+0.3455 eff_rev=+0.2337 tok/s=101423 elapsed=743s
+[17/20] tests.sorted1.txt seed=0 n=1000 shards=50 p_canon=0.0322 p_rev=0.138 eff_canon=+0.5339 eff_rev=+0.2971 tok/s=99988 elapsed=780s
+[18/20] tests.sorted2.txt seed=0 n=1000 shards=50 p_canon=5e-05 p_rev=3.94e-05 eff_canon=+0.6159 eff_rev=+0.6046 tok/s=101918 elapsed=815s
+[19/20] tests.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.0235 p_rev=9.04e-05 eff_canon=+0.2295 eff_rev=+0.4226 tok/s=103284 elapsed=849s
+[20/20] tests.sorted4.txt seed=0 n=1000 shards=50 p_canon=1.81e-06 p_rev=0.000281 eff_canon=+0.6204 eff_rev=+0.5051 tok/s=103545 elapsed=883s
+[run_test] model=gpt2-medium tag=ctrl files=20 seeds=[0] todo=20
+[run_test] loaded gpt2-medium: 355M params, context=1024, stride=512, dtype=tf32
+[1/20] ARC-Easy-Test.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.0264 p_rev=0.119 eff_canon=+0.4391 eff_rev=+0.2736 tok/s=37899 elapsed=132s
+[2/20] ARC-Easy-Test.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.454 p_rev=0.785 eff_canon=+0.0210 eff_rev=-0.1684 tok/s=37894 elapsed=264s
+[3/20] ARC-Easy-Test.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.504 p_rev=0.43 eff_canon=-0.0021 eff_rev=+0.0380 tok/s=38478 elapsed=394s
+[4/20] ARC-Easy-Test.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.444 p_rev=0.474 eff_canon=+0.0281 eff_rev=+0.0125 tok/s=38121 elapsed=526s
+[5/20] ARC-Easy-Test.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.169 p_rev=0.293 eff_canon=+0.1958 eff_rev=+0.0962 tok/s=38137 elapsed=657s
+[6/20] ARC-Easy-Test.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.00729 p_rev=0.00126 eff_canon=+0.6266 eff_rev=+0.6600 tok/s=37972 elapsed=789s
+[7/20] ARC-Easy-Test.sorted1.txt seed=0 n=1000 shards=50 p_canon=2.21e-05 p_rev=0.000201 eff_canon=+0.9993 eff_rev=+0.8899 tok/s=37918 elapsed=921s
+[8/20] ARC-Easy-Test.sorted2.txt seed=0 n=1000 shards=50 p_canon=0.000186 p_rev=0.000257 eff_canon=+1.1024 eff_rev=+0.9438 tok/s=37977 elapsed=1053s
+[9/20] ARC-Easy-Test.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.00663 p_rev=0.0431 eff_canon=+0.6115 eff_rev=+0.4282 tok/s=37771 elapsed=1186s
+[10/20] ARC-Easy-Test.sorted4.txt seed=0 n=1000 shards=50 p_canon=3.76e-05 p_rev=0.000294 eff_canon=+0.8597 eff_rev=+0.8466 tok/s=37837 elapsed=1318s
+[11/20] tests.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.751 p_rev=0.981 eff_canon=-0.0755 eff_rev=-0.2481 tok/s=40625 elapsed=1408s
+[12/20] tests.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.144 p_rev=0.569 eff_canon=+0.1060 eff_rev=-0.0150 tok/s=39983 elapsed=1501s
+[13/20] tests.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.365 p_rev=0.782 eff_canon=+0.0326 eff_rev=-0.0848 tok/s=41396 elapsed=1589s
+[14/20] tests.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.141 p_rev=0.21 eff_canon=+0.1035 eff_rev=+0.0894 tok/s=41248 elapsed=1673s
+[15/20] tests.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.0911 p_rev=0.697 eff_canon=+0.1583 eff_rev=-0.0558 tok/s=40992 elapsed=1759s
+[16/20] tests.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.0161 p_rev=0.268 eff_canon=+0.3390 eff_rev=+0.1328 tok/s=40967 elapsed=1848s
+[17/20] tests.sorted1.txt seed=0 n=1000 shards=50 p_canon=0.0747 p_rev=0.0949 eff_canon=+0.3506 eff_rev=+0.3283 tok/s=40251 elapsed=1941s
+[18/20] tests.sorted2.txt seed=0 n=1000 shards=50 p_canon=0.00571 p_rev=0.000243 eff_canon=+0.3168 eff_rev=+0.4763 tok/s=41032 elapsed=2029s
+[19/20] tests.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.000188 p_rev=0.00245 eff_canon=+0.4031 eff_rev=+0.2858 tok/s=41750 elapsed=2112s
+[20/20] tests.sorted4.txt seed=0 n=1000 shards=50 p_canon=1.48e-05 p_rev=0.000237 eff_canon=+0.5315 eff_rev=+0.4501 tok/s=41856 elapsed=2196s
+[run_test] model=gpt2-xl tag=ctrl files=20 seeds=[0] todo=20
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[scorer] OOM -> max_batch_tokens=2048
+[1/20] ARC-Easy-Test.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.16 p_rev=0.152 eff_canon=+0.2245 eff_rev=+0.2252 tok/s=10840 elapsed=462s
+[2/20] ARC-Easy-Test.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.373 p_rev=0.639 eff_canon=+0.0654 eff_rev=-0.0904 tok/s=10817 elapsed=923s
+[3/20] ARC-Easy-Test.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.681 p_rev=0.283 eff_canon=-0.0951 eff_rev=+0.1297 tok/s=11034 elapsed=1377s
+[4/20] ARC-Easy-Test.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.808 p_rev=0.721 eff_canon=-0.1833 eff_rev=-0.1279 tok/s=10918 elapsed=1838s
+[5/20] ARC-Easy-Test.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.0847 p_rev=0.218 eff_canon=+0.2504 eff_rev=+0.1548 tok/s=10918 elapsed=2296s
+[6/20] ARC-Easy-Test.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.0263 p_rev=0.000313 eff_canon=+0.5118 eff_rev=+0.8884 tok/s=10860 elapsed=2758s
+[7/20] ARC-Easy-Test.sorted1.txt seed=0 n=1000 shards=50 p_canon=1.89e-06 p_rev=0.000906 eff_canon=+1.2814 eff_rev=+0.7060 tok/s=10827 elapsed=3218s
+[8/20] ARC-Easy-Test.sorted2.txt seed=0 n=1000 shards=50 p_canon=8.71e-06 p_rev=0.00349 eff_canon=+1.3033 eff_rev=+0.8311 tok/s=10893 elapsed=3678s
+[9/20] ARC-Easy-Test.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.0124 p_rev=0.025 eff_canon=+0.5640 eff_rev=+0.4629 tok/s=10811 elapsed=4143s
+[10/20] ARC-Easy-Test.sorted4.txt seed=0 n=1000 shards=50 p_canon=1.35e-05 p_rev=4.29e-05 eff_canon=+1.0017 eff_rev=+1.0783 tok/s=10831 elapsed=4605s
+[11/20] tests.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.866 p_rev=0.991 eff_canon=-0.1288 eff_rev=-0.2659 tok/s=11603 elapsed=4919s
+[12/20] tests.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.0107 p_rev=0.73 eff_canon=+0.2098 eff_rev=-0.0661 tok/s=11444 elapsed=5246s
+[13/20] tests.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.789 p_rev=0.723 eff_canon=-0.0938 eff_rev=-0.0584 tok/s=11857 elapsed=5551s
+[14/20] tests.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.15 p_rev=0.151 eff_canon=+0.1056 eff_rev=+0.1130 tok/s=11767 elapsed=5846s
+[15/20] tests.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.162 p_rev=0.145 eff_canon=+0.1240 eff_rev=+0.1181 tok/s=11734 elapsed=6146s
+[16/20] tests.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.00876 p_rev=0.377 eff_canon=+0.4119 eff_rev=+0.0630 tok/s=11697 elapsed=6458s
+[17/20] tests.sorted1.txt seed=0 n=1000 shards=50 p_canon=0.0948 p_rev=0.19 eff_canon=+0.3207 eff_rev=+0.2010 tok/s=11502 elapsed=6783s
+[18/20] tests.sorted2.txt seed=0 n=1000 shards=50 p_canon=0.0113 p_rev=0.000141 eff_canon=+0.3575 eff_rev=+0.5155 tok/s=11763 elapsed=7090s
+[19/20] tests.sorted3.txt seed=0 n=1000 shards=50 p_canon=3.25e-05 p_rev=0.0062 eff_canon=+0.4803 eff_rev=+0.2700 tok/s=11902 elapsed=7382s
+[20/20] tests.sorted4.txt seed=0 n=1000 shards=50 p_canon=0.000403 p_rev=0.000944 eff_canon=+0.4860 eff_rev=+0.3485 tok/s=12008 elapsed=7675s
+===== STAGE controls_a end   2026-11-15T06:17:14Z rc=0 =====
+===== STAGE mmlu_k10 start 2026-11-15T06:17:14Z =====
+[run_test] model=gpt2 tag=k10 files=57 seeds=[0] todo=57
+[run_test] loaded gpt2: 124M params, context=1024, stride=512, dtype=tf32
+[1/57] abstract_algebra.json seed=0 n=100 shards=10 p_canon=0.681 p_rev=0.494 eff_canon=-0.1762 eff_rev=+0.0076 tok/s=136081 elapsed=2s
+[2/57] anatomy.json seed=0 n=135 shards=13 p_canon=0.975 p_rev=0.15 eff_canon=-0.6308 eff_rev=+0.3445 tok/s=142297 elapsed=5s
+[3/57] astronomy.json seed=0 n=152 shards=15 p_canon=0.24 p_rev=0.7 eff_canon=+0.2713 eff_rev=-0.1562 tok/s=139276 elapsed=8s
+[4/57] business_ethics.json seed=0 n=100 shards=10 p_canon=0.976 p_rev=0.745 eff_canon=-0.9627 eff_rev=-0.1634 tok/s=139497 elapsed=11s
+[5/57] clinical_knowledge.json seed=0 n=265 shards=26 p_canon=0.475 p_rev=0.379 eff_canon=+0.0143 eff_rev=+0.0796 tok/s=142737 elapsed=16s
+[6/57] college_biology.json seed=0 n=144 shards=14 p_canon=0.509 p_rev=0.931 eff_canon=+0.0137 eff_rev=-0.4053 tok/s=137473 elapsed=20s
+[7/57] college_chemistry.json seed=0 n=100 shards=10 p_canon=0.583 p_rev=0.884 eff_canon=-0.0358 eff_rev=-0.2528 tok/s=139901 elapsed=22s
+[8/57] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.142 p_rev=0.361 eff_canon=+0.5546 eff_rev=+0.2355 tok/s=114231 elapsed=27s
+[9/57] college_mathematics.json seed=0 n=100 shards=10 p_canon=0.55 p_rev=0.628 eff_canon=-0.0449 eff_rev=-0.1497 tok/s=138136 elapsed=30s
+[10/57] college_medicine.json seed=0 n=173 shards=17 p_canon=0.0499 p_rev=0.517 eff_canon=+1.1156 eff_rev=-0.0259 tok/s=109988 elapsed=38s
+[11/57] college_physics.json seed=0 n=102 shards=10 p_canon=0.319 p_rev=0.682 eff_canon=+0.1560 eff_rev=-0.2498 tok/s=137852 elapsed=40s
+[12/57] computer_security.json seed=0 n=100 shards=10 p_canon=0.725 p_rev=0.297 eff_canon=-0.3825 eff_rev=+0.2540 tok/s=140779 elapsed=43s
+[13/57] conceptual_physics.json seed=0 n=235 shards=23 p_canon=0.636 p_rev=0.000863 eff_canon=-0.0705 eff_rev=+0.7833 tok/s=144884 elapsed=46s
+[14/57] econometrics.json seed=0 n=114 shards=11 p_canon=0.455 p_rev=0.923 eff_canon=+0.0700 eff_rev=-0.9609 tok/s=126372 elapsed=50s
+[15/57] electrical_engineering.json seed=0 n=145 shards=14 p_canon=0.782 p_rev=0.302 eff_canon=-0.2231 eff_rev=+0.1525 tok/s=145921 elapsed=52s
+[16/57] elementary_mathematics.json seed=0 n=378 shards=37 p_canon=0.105 p_rev=0.636 eff_canon=+0.2260 eff_rev=-0.0771 tok/s=143792 elapsed=59s
+[17/57] formal_logic.json seed=0 n=126 shards=12 p_canon=0.633 p_rev=0.425 eff_canon=-0.5331 eff_rev=+0.2309 tok/s=109891 elapsed=65s
+[18/57] global_facts.json seed=0 n=100 shards=10 p_canon=0.0536 p_rev=0.718 eff_canon=+0.6414 eff_rev=-0.1989 tok/s=145902 elapsed=67s
+[19/57] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.355 p_rev=0.333 eff_canon=+0.1010 eff_rev=+0.1128 tok/s=138955 elapsed=75s
+[20/57] high_school_chemistry.json seed=0 n=203 shards=20 p_canon=0.0941 p_rev=0.514 eff_canon=+0.3484 eff_rev=-0.0175 tok/s=134706 elapsed=80s
+[21/57] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.192 p_rev=0.825 eff_canon=+1.2978 eff_rev=-0.5305 tok/s=110718 elapsed=85s
+[22/57] high_school_european_history.json seed=0 n=165 shards=16 p_canon=0.012 p_rev=0.284 eff_canon=+25.6073 eff_rev=+6.1112 tok/s=85070 elapsed=120s
+[23/57] high_school_geography.json seed=0 n=198 shards=19 p_canon=0.0718 p_rev=0.756 eff_canon=+0.3865 eff_rev=-0.2060 tok/s=145133 elapsed=123s
+[24/57] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.1 p_rev=0.121 eff_canon=+0.3340 eff_rev=+0.2206 tok/s=139857 elapsed=127s
+[25/57] high_school_macroeconomics.json seed=0 n=390 shards=39 p_canon=0.0899 p_rev=0.437 eff_canon=+0.2894 eff_rev=+0.0302 tok/s=142416 elapsed=135s
+[26/57] high_school_mathematics.json seed=0 n=270 shards=27 p_canon=0.377 p_rev=0.838 eff_canon=+0.0837 eff_rev=-0.2535 tok/s=141223 elapsed=141s
+[27/57] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.761 p_rev=0.0473 eff_canon=-0.2044 eff_rev=+0.4057 tok/s=139220 elapsed=147s
+[28/57] high_school_physics.json seed=0 n=151 shards=15 p_canon=0.0705 p_rev=0.27 eff_canon=+0.6521 eff_rev=+0.1498 tok/s=131846 elapsed=152s
+[29/57] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.0339 p_rev=0.0816 eff_canon=+0.4019 eff_rev=+0.2000 tok/s=140479 elapsed=164s
+[30/57] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.401 p_rev=0.322 eff_canon=+0.0845 eff_rev=+0.1793 tok/s=111624 elapsed=174s
+[31/57] high_school_us_history.json seed=0 n=204 shards=20 p_canon=0.0152 p_rev=0.816 eff_canon=+17.3566 eff_rev=-5.2933 tok/s=85870 elapsed=211s
+[32/57] high_school_world_history.json seed=0 n=237 shards=23 p_canon=0.00417 p_rev=0.964 eff_canon=+12.9232 eff_rev=-8.5559 tok/s=84563 elapsed=261s
+[33/57] human_aging.json seed=0 n=223 shards=22 p_canon=0.126 p_rev=0.679 eff_canon=+0.2214 eff_rev=-0.1326 tok/s=144555 elapsed=264s
+[34/57] human_sexuality.json seed=0 n=131 shards=13 p_canon=0.416 p_rev=0.399 eff_canon=+0.0540 eff_rev=+0.0659 tok/s=143319 elapsed=266s
+[35/57] international_law.json seed=0 n=121 shards=12 p_canon=0.826 p_rev=0.034 eff_canon=-0.2566 eff_rev=+0.7182 tok/s=134706 elapsed=270s
+[36/57] jurisprudence.json seed=0 n=108 shards=10 p_canon=0.711 p_rev=0.104 eff_canon=-0.2058 eff_rev=+0.5361 tok/s=139536 elapsed=273s
+[37/57] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.114 p_rev=0.286 eff_canon=+0.4815 eff_rev=+0.1158 tok/s=140374 elapsed=276s
+[38/57] machine_learning.json seed=0 n=112 shards=11 p_canon=0.0742 p_rev=0.987 eff_canon=+0.9892 eff_rev=-0.8683 tok/s=132276 elapsed=279s
+[39/57] management.json seed=0 n=103 shards=10 p_canon=0.75 p_rev=0.0262 eff_canon=-0.2459 eff_rev=+0.6280 tok/s=146029 elapsed=281s
+[40/57] marketing.json seed=0 n=234 shards=23 p_canon=0.237 p_rev=0.98 eff_canon=+0.2265 eff_rev=-0.6193 tok/s=143619 elapsed=285s
+[41/57] medical_genetics.json seed=0 n=100 shards=10 p_canon=0.314 p_rev=0.828 eff_canon=+0.2336 eff_rev=-0.3830 tok/s=144473 elapsed=287s
+[42/57] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.496 p_rev=0.315 eff_canon=+0.0069 eff_rev=+0.0454 tok/s=140335 elapsed=298s
+[43/57] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.242 p_rev=0.661 eff_canon=+0.2413 eff_rev=-0.1151 tok/s=141502 elapsed=306s
+[44/57] moral_scenarios.json seed=0 n=895 shards=50 p_canon=0.181 p_rev=0.61 eff_canon=+0.0936 eff_rev=-0.0302 tok/s=94124 elapsed=355s
+[45/57] nutrition.json seed=0 n=306 shards=30 p_canon=0.441 p_rev=0.776 eff_canon=+0.0540 eff_rev=-0.2092 tok/s=140381 elapsed=362s
+[46/57] philosophy.json seed=0 n=311 shards=31 p_canon=0.00534 p_rev=0.786 eff_canon=+0.9726 eff_rev=-0.1633 tok/s=142528 elapsed=368s
+[47/57] prehistory.json seed=0 n=324 shards=32 p_canon=0.321 p_rev=0.826 eff_canon=+0.0997 eff_rev=-0.1788 tok/s=141781 elapsed=375s
+[48/57] professional_accounting.json seed=0 n=282 shards=28 p_canon=0.985 p_rev=0.301 eff_canon=-0.4555 eff_rev=+0.2065 tok/s=129646 elapsed=385s
+[49/57] professional_law.json seed=0 n=1534 shards=50 p_canon=4.14e-31 p_rev=8.45e-11 eff_canon=+21.4618 eff_rev=+2.7055 tok/s=79989 elapsed=628s
+[50/57] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.011 p_rev=0.764 eff_canon=+2.1693 eff_rev=-0.4762 tok/s=93937 elapsed=655s
+[51/57] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.0344 p_rev=0.118 eff_canon=+0.3911 eff_rev=+0.2331 tok/s=130980 elapsed=672s
+[52/57] public_relations.json seed=0 n=110 shards=11 p_canon=0.325 p_rev=0.543 eff_canon=+0.2174 eff_rev=-0.0304 tok/s=142870 elapsed=674s
+[53/57] security_studies.json seed=0 n=245 shards=24 p_canon=0.175 p_rev=0.737 eff_canon=+0.5803 eff_rev=-0.2745 tok/s=99606 elapsed=693s
+[54/57] sociology.json seed=0 n=201 shards=20 p_canon=0.129 p_rev=0.252 eff_canon=+0.3478 eff_rev=+0.1645 tok/s=140038 elapsed=697s
+[55/57] us_foreign_policy.json seed=0 n=100 shards=10 p_canon=0.458 p_rev=0.0794 eff_canon=+0.0430 eff_rev=+0.4555 tok/s=142748 elapsed=699s
+[56/57] virology.json seed=0 n=166 shards=16 p_canon=0.0811 p_rev=0.115 eff_canon=+0.5118 eff_rev=+0.3627 tok/s=143202 elapsed=702s
+[57/57] world_religions.json seed=0 n=171 shards=17 p_canon=0.797 p_rev=0.464 eff_canon=-0.2697 eff_rev=+0.0151 tok/s=146231 elapsed=704s
+[run_test] model=gpt2-medium tag=k10 files=57 seeds=[0] todo=57
+[run_test] loaded gpt2-medium: 355M params, context=1024, stride=512, dtype=tf32
+[1/57] abstract_algebra.json seed=0 n=100 shards=10 p_canon=0.53 p_rev=0.969 eff_canon=-0.0291 eff_rev=-0.4226 tok/s=59208 elapsed=5s
+[2/57] anatomy.json seed=0 n=135 shards=13 p_canon=0.826 p_rev=0.289 eff_canon=-0.3851 eff_rev=+0.1909 tok/s=60182 elapsed=11s
+[3/57] astronomy.json seed=0 n=152 shards=15 p_canon=0.268 p_rev=0.509 eff_canon=+0.1634 eff_rev=-0.0210 tok/s=59482 elapsed=20s
+[4/57] business_ethics.json seed=0 n=100 shards=10 p_canon=0.578 p_rev=0.593 eff_canon=-0.0829 eff_rev=-0.0878 tok/s=58717 elapsed=26s
+[5/57] clinical_knowledge.json seed=0 n=265 shards=26 p_canon=0.637 p_rev=0.155 eff_canon=-0.0873 eff_rev=+0.2513 tok/s=60086 elapsed=37s
+[6/57] college_biology.json seed=0 n=144 shards=14 p_canon=0.174 p_rev=0.864 eff_canon=+0.4236 eff_rev=-0.2856 tok/s=58456 elapsed=46s
+[7/57] college_chemistry.json seed=0 n=100 shards=10 p_canon=0.389 p_rev=0.685 eff_canon=+0.1232 eff_rev=-0.2611 tok/s=58776 elapsed=52s
+[8/57] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.0837 p_rev=0.512 eff_canon=+0.9768 eff_rev=-0.0153 tok/s=46951 elapsed=64s
+[9/57] college_mathematics.json seed=0 n=100 shards=10 p_canon=0.806 p_rev=0.473 eff_canon=-0.3770 eff_rev=+0.0142 tok/s=59115 elapsed=70s
+[10/57] college_medicine.json seed=0 n=173 shards=17 p_canon=0.0125 p_rev=0.44 eff_canon=+1.4878 eff_rev=+0.0979 tok/s=44902 elapsed=90s
+[11/57] college_physics.json seed=0 n=102 shards=10 p_canon=0.423 p_rev=0.57 eff_canon=+0.0461 eff_rev=-0.1474 tok/s=58228 elapsed=96s
+[12/57] computer_security.json seed=0 n=100 shards=10 p_canon=0.445 p_rev=0.222 eff_canon=+0.0897 eff_rev=+0.2069 tok/s=59665 elapsed=101s
+[13/57] conceptual_physics.json seed=0 n=235 shards=23 p_canon=0.147 p_rev=0.0565 eff_canon=+0.2934 eff_rev=+0.3568 tok/s=61688 elapsed=109s
+[14/57] econometrics.json seed=0 n=114 shards=11 p_canon=0.229 p_rev=0.81 eff_canon=+0.5931 eff_rev=-0.3197 tok/s=52376 elapsed=120s
+[15/57] electrical_engineering.json seed=0 n=145 shards=14 p_canon=0.0959 p_rev=0.851 eff_canon=+0.4047 eff_rev=-0.3197 tok/s=61813 elapsed=124s
+[16/57] elementary_mathematics.json seed=0 n=378 shards=37 p_canon=0.0877 p_rev=0.183 eff_canon=+0.2437 eff_rev=+0.1979 tok/s=60541 elapsed=140s
+[17/57] formal_logic.json seed=0 n=126 shards=12 p_canon=0.434 p_rev=0.475 eff_canon=+0.0707 eff_rev=-0.0041 tok/s=44855 elapsed=155s
+[18/57] global_facts.json seed=0 n=100 shards=10 p_canon=0.308 p_rev=0.564 eff_canon=+0.1691 eff_rev=-0.0612 tok/s=61903 elapsed=159s
+[19/57] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.114 p_rev=0.636 eff_canon=+0.4060 eff_rev=-0.0912 tok/s=58415 elapsed=178s
+[20/57] high_school_chemistry.json seed=0 n=203 shards=20 p_canon=0.357 p_rev=0.676 eff_canon=+0.1071 eff_rev=-0.1409 tok/s=56926 elapsed=192s
+[21/57] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.089 p_rev=0.893 eff_canon=+1.8735 eff_rev=-0.6037 tok/s=45361 elapsed=203s
+[22/57] high_school_european_history.json seed=0 n=165 shards=16 p_canon=0.00632 p_rev=0.3 eff_canon=+27.0453 eff_rev=+5.2965 tok/s=33851 elapsed=290s
+[23/57] high_school_geography.json seed=0 n=198 shards=19 p_canon=0.0599 p_rev=0.934 eff_canon=+0.4186 eff_rev=-0.4033 tok/s=61484 elapsed=297s
+[24/57] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.113 p_rev=0.467 eff_canon=+0.2807 eff_rev=+0.0166 tok/s=59236 elapsed=307s
+[25/57] high_school_macroeconomics.json seed=0 n=390 shards=39 p_canon=0.116 p_rev=0.915 eff_canon=+0.2309 eff_rev=-0.2280 tok/s=60003 elapsed=327s
+[26/57] high_school_mathematics.json seed=0 n=270 shards=27 p_canon=0.687 p_rev=0.527 eff_canon=-0.1269 eff_rev=-0.0177 tok/s=59354 elapsed=341s
+[27/57] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.314 p_rev=0.41 eff_canon=+0.1678 eff_rev=+0.0796 tok/s=58728 elapsed=354s
+[28/57] high_school_physics.json seed=0 n=151 shards=15 p_canon=0.0565 p_rev=0.661 eff_canon=+0.5126 eff_rev=-0.1436 tok/s=55294 elapsed=367s
+[29/57] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.0258 p_rev=0.371 eff_canon=+0.5789 eff_rev=+0.0627 tok/s=59241 elapsed=394s
+[30/57] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.524 p_rev=0.68 eff_canon=-0.0205 eff_rev=-0.2179 tok/s=45693 elapsed=420s
+[31/57] high_school_us_history.json seed=0 n=204 shards=20 p_canon=0.00162 p_rev=0.847 eff_canon=+21.7920 eff_rev=-5.7404 tok/s=34171 elapsed=512s
+[32/57] high_school_world_history.json seed=0 n=237 shards=23 p_canon=0.0003 p_rev=0.976 eff_canon=+16.7873 eff_rev=-8.7039 tok/s=33638 elapsed=637s
+[33/57] human_aging.json seed=0 n=223 shards=22 p_canon=0.0899 p_rev=0.927 eff_canon=+0.2910 eff_rev=-0.3233 tok/s=61264 elapsed=645s
+[34/57] human_sexuality.json seed=0 n=131 shards=13 p_canon=0.0242 p_rev=0.94 eff_canon=+0.5550 eff_rev=-0.5428 tok/s=60461 elapsed=650s
+[35/57] international_law.json seed=0 n=121 shards=12 p_canon=0.459 p_rev=0.19 eff_canon=+0.0358 eff_rev=+0.4055 tok/s=57811 elapsed=659s
+[36/57] jurisprudence.json seed=0 n=108 shards=10 p_canon=0.694 p_rev=0.558 eff_canon=-0.2869 eff_rev=-0.0563 tok/s=58841 elapsed=665s
+[37/57] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.0094 p_rev=0.285 eff_canon=+1.0590 eff_rev=+0.1588 tok/s=59152 elapsed=674s
+[38/57] machine_learning.json seed=0 n=112 shards=11 p_canon=0.349 p_rev=0.929 eff_canon=+0.4422 eff_rev=-0.9114 tok/s=55395 elapsed=681s
+[39/57] management.json seed=0 n=103 shards=10 p_canon=0.393 p_rev=0.449 eff_canon=+0.0847 eff_rev=+0.0618 tok/s=61831 elapsed=684s
+[40/57] marketing.json seed=0 n=234 shards=23 p_canon=0.237 p_rev=0.688 eff_canon=+0.1927 eff_rev=-0.1233 tok/s=60394 elapsed=694s
+[41/57] medical_genetics.json seed=0 n=100 shards=10 p_canon=0.0833 p_rev=0.867 eff_canon=+0.5040 eff_rev=-0.4755 tok/s=61013 elapsed=698s
+[42/57] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.736 p_rev=0.338 eff_canon=-0.0846 eff_rev=+0.0731 tok/s=59185 elapsed=726s
+[43/57] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.1 p_rev=0.75 eff_canon=+0.4300 eff_rev=-0.1683 tok/s=59412 elapsed=744s
+[44/57] moral_scenarios.json seed=0 n=895 shards=50 p_canon=0.274 p_rev=0.877 eff_canon=+0.0596 eff_rev=-0.1005 tok/s=37754 elapsed=866s
+[45/57] nutrition.json seed=0 n=306 shards=30 p_canon=0.296 p_rev=0.85 eff_canon=+0.1968 eff_rev=-0.2811 tok/s=58985 elapsed=883s
+[46/57] philosophy.json seed=0 n=311 shards=31 p_canon=0.0115 p_rev=0.992 eff_canon=+0.9394 eff_rev=-0.6059 tok/s=60014 elapsed=897s
+[47/57] prehistory.json seed=0 n=324 shards=32 p_canon=0.315 p_rev=0.879 eff_canon=+0.1166 eff_rev=-0.2603 tok/s=59557 elapsed=913s
+[48/57] professional_accounting.json seed=0 n=282 shards=28 p_canon=0.757 p_rev=0.35 eff_canon=-0.1745 eff_rev=+0.1000 tok/s=54510 elapsed=937s
+[49/57] professional_law.json seed=0 n=1534 shards=50 p_canon=2.05e-31 p_rev=1.16e-08 eff_canon=+23.2511 eff_rev=+2.3958 tok/s=31637 elapsed=1551s
+[50/57] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.00286 p_rev=0.562 eff_canon=+2.5413 eff_rev=-0.1285 tok/s=37757 elapsed=1618s
+[51/57] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.175 p_rev=0.0187 eff_canon=+0.2020 eff_rev=+0.4144 tok/s=55367 elapsed=1659s
+[52/57] public_relations.json seed=0 n=110 shards=11 p_canon=0.741 p_rev=0.0966 eff_canon=-0.2973 eff_rev=+0.4962 tok/s=60487 elapsed=1664s
+[53/57] security_studies.json seed=0 n=245 shards=24 p_canon=0.147 p_rev=0.714 eff_canon=+0.6585 eff_rev=-0.2509 tok/s=40328 elapsed=1710s
+[54/57] sociology.json seed=0 n=201 shards=20 p_canon=0.15 p_rev=0.0077 eff_canon=+0.2466 eff_rev=+0.5859 tok/s=58936 elapsed=1721s
+[55/57] us_foreign_policy.json seed=0 n=100 shards=10 p_canon=0.466 p_rev=0.645 eff_canon=+0.0213 eff_rev=-0.1197 tok/s=59986 elapsed=1725s
+[56/57] virology.json seed=0 n=166 shards=16 p_canon=0.293 p_rev=0.512 eff_canon=+0.1814 eff_rev=+0.0107 tok/s=60323 elapsed=1732s
+[57/57] world_religions.json seed=0 n=171 shards=17 p_canon=0.543 p_rev=0.218 eff_canon=-0.0328 eff_rev=+0.2255 tok/s=62194 elapsed=1737s
+[run_test] model=gpt2-large tag=k10 files=57 seeds=[0] todo=57
+[run_test] loaded gpt2-large: 774M params, context=1024, stride=512, dtype=tf32
+[1/57] abstract_algebra.json seed=0 n=100 shards=10 p_canon=0.64 p_rev=0.85 eff_canon=-0.1909 eff_rev=-0.4056 tok/s=32111 elapsed=9s
+[2/57] anatomy.json seed=0 n=135 shards=13 p_canon=0.986 p_rev=0.39 eff_canon=-0.7824 eff_rev=+0.0739 tok/s=32193 elapsed=21s
+[3/57] astronomy.json seed=0 n=152 shards=15 p_canon=0.672 p_rev=0.704 eff_canon=-0.1585 eff_rev=-0.1175 tok/s=31668 elapsed=37s
+[4/57] business_ethics.json seed=0 n=100 shards=10 p_canon=0.0666 p_rev=0.904 eff_canon=+0.6621 eff_rev=-0.2779 tok/s=31656 elapsed=48s
+[5/57] clinical_knowledge.json seed=0 n=265 shards=26 p_canon=0.178 p_rev=0.0307 eff_canon=+0.2502 eff_rev=+0.4217 tok/s=32236 elapsed=70s
+[6/57] college_biology.json seed=0 n=144 shards=14 p_canon=0.0862 p_rev=0.909 eff_canon=+0.6144 eff_rev=-0.3987 tok/s=31074 elapsed=87s
+[7/57] college_chemistry.json seed=0 n=100 shards=10 p_canon=0.569 p_rev=0.487 eff_canon=-0.0794 eff_rev=+0.0163 tok/s=31571 elapsed=98s
+[8/57] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.246 p_rev=0.45 eff_canon=+0.5913 eff_rev=+0.0667 tok/s=25038 elapsed=119s
+[9/57] college_mathematics.json seed=0 n=100 shards=10 p_canon=0.636 p_rev=0.27 eff_canon=-0.2080 eff_rev=+0.2466 tok/s=31285 elapsed=130s
+[10/57] college_medicine.json seed=0 n=173 shards=17 p_canon=0.0254 p_rev=0.781 eff_canon=+1.4499 eff_rev=-0.5751 tok/s=23936 elapsed=168s
+[11/57] college_physics.json seed=0 n=102 shards=10 p_canon=0.151 p_rev=0.827 eff_canon=+0.3880 eff_rev=-0.5552 tok/s=31196 elapsed=180s
+[12/57] computer_security.json seed=0 n=100 shards=10 p_canon=0.567 p_rev=0.0065 eff_canon=-0.0875 eff_rev=+0.7298 tok/s=31955 elapsed=190s
+[13/57] conceptual_physics.json seed=0 n=235 shards=23 p_canon=0.115 p_rev=0.0311 eff_canon=+0.2852 eff_rev=+0.4892 tok/s=33114 elapsed=204s
+[14/57] econometrics.json seed=0 n=114 shards=11 p_canon=0.237 p_rev=0.75 eff_canon=+0.4329 eff_rev=-0.2133 tok/s=28101 elapsed=224s
+[15/57] electrical_engineering.json seed=0 n=145 shards=14 p_canon=0.341 p_rev=0.787 eff_canon=+0.1049 eff_rev=-0.2221 tok/s=33138 elapsed=232s
+[16/57] elementary_mathematics.json seed=0 n=378 shards=37 p_canon=0.237 p_rev=0.176 eff_canon=+0.1393 eff_rev=+0.1873 tok/s=32409 elapsed=262s
+[17/57] formal_logic.json seed=0 n=126 shards=12 p_canon=0.518 p_rev=0.547 eff_canon=-0.1875 eff_rev=-0.2753 tok/s=23980 elapsed=290s
+[18/57] global_facts.json seed=0 n=100 shards=10 p_canon=0.016 p_rev=0.431 eff_canon=+0.5388 eff_rev=+0.0876 tok/s=33221 elapsed=297s
+[19/57] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.0744 p_rev=0.188 eff_canon=+0.4556 eff_rev=+0.2069 tok/s=31295 elapsed=333s
+[20/57] high_school_chemistry.json seed=0 n=203 shards=20 p_canon=0.141 p_rev=0.372 eff_canon=+0.2875 eff_rev=+0.1201 tok/s=30360 elapsed=358s
+[21/57] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.104 p_rev=0.874 eff_canon=+2.0078 eff_rev=-0.5919 tok/s=24170 elapsed=380s
+[22/57] high_school_european_history.json seed=0 n=165 shards=16 p_canon=0.00349 p_rev=0.294 eff_canon=+28.0022 eff_rev=+5.2687 tok/s=18031 elapsed=543s
+[23/57] high_school_geography.json seed=0 n=198 shards=19 p_canon=0.162 p_rev=0.926 eff_canon=+0.3012 eff_rev=-0.4292 tok/s=32852 elapsed=555s
+[24/57] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.0795 p_rev=0.518 eff_canon=+0.3835 eff_rev=-0.0164 tok/s=31776 elapsed=575s
+[25/57] high_school_macroeconomics.json seed=0 n=390 shards=39 p_canon=0.813 p_rev=0.611 eff_canon=-0.1723 eff_rev=-0.0508 tok/s=32136 elapsed=611s
+[26/57] high_school_mathematics.json seed=0 n=270 shards=27 p_canon=0.805 p_rev=0.422 eff_canon=-0.1956 eff_rev=+0.0485 tok/s=31971 elapsed=638s
+[27/57] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.67 p_rev=0.75 eff_canon=-0.1268 eff_rev=-0.1772 tok/s=31526 elapsed=662s
+[28/57] high_school_physics.json seed=0 n=151 shards=15 p_canon=0.0383 p_rev=0.566 eff_canon=+0.7448 eff_rev=-0.0454 tok/s=29674 elapsed=686s
+[29/57] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.00808 p_rev=0.531 eff_canon=+0.6939 eff_rev=-0.0176 tok/s=31728 elapsed=736s
+[30/57] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.511 p_rev=0.435 eff_canon=-0.0072 eff_rev=+0.0398 tok/s=24350 elapsed=786s
+[31/57] high_school_us_history.json seed=0 n=204 shards=20 p_canon=0.0009 p_rev=0.851 eff_canon=+23.2798 eff_rev=-5.4165 tok/s=18179 elapsed=959s
+[32/57] high_school_world_history.json seed=0 n=237 shards=23 p_canon=6.26e-05 p_rev=0.973 eff_canon=+18.8691 eff_rev=-8.3036 tok/s=17902 elapsed=1193s
+[33/57] human_aging.json seed=0 n=223 shards=22 p_canon=0.704 p_rev=0.81 eff_canon=-0.1415 eff_rev=-0.2309 tok/s=32883 elapsed=1207s
+[34/57] human_sexuality.json seed=0 n=131 shards=13 p_canon=0.0827 p_rev=0.817 eff_canon=+0.4749 eff_rev=-0.2344 tok/s=32284 elapsed=1218s
+[35/57] international_law.json seed=0 n=121 shards=12 p_canon=0.699 p_rev=0.833 eff_canon=-0.1783 eff_rev=-0.4017 tok/s=30607 elapsed=1235s
+[36/57] jurisprudence.json seed=0 n=108 shards=10 p_canon=0.854 p_rev=0.202 eff_canon=-0.3438 eff_rev=+0.3318 tok/s=31466 elapsed=1245s
+[37/57] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.0198 p_rev=0.585 eff_canon=+1.1140 eff_rev=-0.0661 tok/s=31605 elapsed=1262s
+[38/57] machine_learning.json seed=0 n=112 shards=11 p_canon=0.353 p_rev=0.94 eff_canon=+0.4221 eff_rev=-1.2031 tok/s=29662 elapsed=1276s
+[39/57] management.json seed=0 n=103 shards=10 p_canon=0.82 p_rev=0.0102 eff_canon=-0.1253 eff_rev=+0.5641 tok/s=33176 elapsed=1282s
+[40/57] marketing.json seed=0 n=234 shards=23 p_canon=0.0531 p_rev=0.842 eff_canon=+0.4949 eff_rev=-0.2521 tok/s=32281 elapsed=1300s
+[41/57] medical_genetics.json seed=0 n=100 shards=10 p_canon=0.444 p_rev=0.896 eff_canon=+0.0429 eff_rev=-0.5392 tok/s=32763 elapsed=1308s
+[42/57] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.566 p_rev=0.72 eff_canon=-0.0226 eff_rev=-0.0900 tok/s=31680 elapsed=1359s
+[43/57] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.0673 p_rev=0.912 eff_canon=+0.5736 eff_rev=-0.3336 tok/s=31909 elapsed=1393s
+[44/57] moral_scenarios.json seed=0 n=895 shards=50 p_canon=0.0632 p_rev=0.852 eff_canon=+0.1610 eff_rev=-0.0981 tok/s=20106 elapsed=1621s
+[45/57] nutrition.json seed=0 n=306 shards=30 p_canon=0.0837 p_rev=0.77 eff_canon=+0.3762 eff_rev=-0.1960 tok/s=31670 elapsed=1653s
+[46/57] philosophy.json seed=0 n=311 shards=31 p_canon=0.037 p_rev=0.99 eff_canon=+0.7746 eff_rev=-0.5707 tok/s=32267 elapsed=1679s
+[47/57] prehistory.json seed=0 n=324 shards=32 p_canon=0.102 p_rev=0.281 eff_canon=+0.2656 eff_rev=+0.0990 tok/s=31977 elapsed=1710s
+[48/57] professional_accounting.json seed=0 n=282 shards=28 p_canon=0.983 p_rev=0.625 eff_canon=-0.5795 eff_rev=-0.0850 tok/s=29046 elapsed=1755s
+[49/57] professional_law.json seed=0 n=1534 shards=50 p_canon=2.36e-31 p_rev=1.72e-09 eff_canon=+23.7640 eff_rev=+2.4034 tok/s=16826 elapsed=2910s
+[50/57] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.000203 p_rev=0.766 eff_canon=+3.3384 eff_rev=-0.3985 tok/s=20107 elapsed=3035s
+[51/57] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.012 p_rev=0.415 eff_canon=+0.4892 eff_rev=+0.0447 tok/s=29433 elapsed=3112s
+[52/57] public_relations.json seed=0 n=110 shards=11 p_canon=0.0683 p_rev=0.355 eff_canon=+0.5753 eff_rev=+0.1690 tok/s=32510 elapsed=3121s
+[53/57] security_studies.json seed=0 n=245 shards=24 p_canon=0.0584 p_rev=0.827 eff_canon=+0.8860 eff_rev=-0.4272 tok/s=21474 elapsed=3207s
+[54/57] sociology.json seed=0 n=201 shards=20 p_canon=0.0725 p_rev=0.135 eff_canon=+0.3186 eff_rev=+0.2784 tok/s=31690 elapsed=3227s
+[55/57] us_foreign_policy.json seed=0 n=100 shards=10 p_canon=0.974 p_rev=0.0632 eff_canon=-0.6234 eff_rev=+0.4945 tok/s=32212 elapsed=3236s
+[56/57] virology.json seed=0 n=166 shards=16 p_canon=0.0231 p_rev=0.414 eff_canon=+0.6440 eff_rev=+0.0723 tok/s=32311 elapsed=3249s
+[57/57] world_religions.json seed=0 n=171 shards=17 p_canon=0.859 p_rev=0.0334 eff_canon=-0.3221 eff_rev=+0.4289 tok/s=33364 elapsed=3258s
+[run_test] model=gpt2-xl tag=k10 files=57 seeds=[0] todo=57
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[scorer] OOM -> max_batch_tokens=2048
+[1/57] abstract_algebra.json seed=0 n=100 shards=10 p_canon=0.496 p_rev=0.564 eff_canon=+0.0047 eff_rev=-0.0471 tok/s=16890 elapsed=17s
+[2/57] anatomy.json seed=0 n=135 shards=13 p_canon=0.969 p_rev=0.536 eff_canon=-0.7173 eff_rev=-0.0064 tok/s=17056 elapsed=40s
+[3/57] astronomy.json seed=0 n=152 shards=15 p_canon=0.119 p_rev=0.969 eff_canon=+0.3585 eff_rev=-0.4565 tok/s=16743 elapsed=70s
+[4/57] business_ethics.json seed=0 n=100 shards=10 p_canon=0.823 p_rev=0.383 eff_canon=-0.3952 eff_rev=+0.1698 tok/s=16782 elapsed=90s
+[5/57] clinical_knowledge.json seed=0 n=265 shards=26 p_canon=0.0169 p_rev=0.439 eff_canon=+0.6927 eff_rev=+0.0444 tok/s=17079 elapsed=132s
+[6/57] college_biology.json seed=0 n=144 shards=14 p_canon=0.0911 p_rev=0.783 eff_canon=+0.5539 eff_rev=-0.2177 tok/s=16383 elapsed=164s
+[7/57] college_chemistry.json seed=0 n=100 shards=10 p_canon=0.312 p_rev=0.613 eff_canon=+0.2274 eff_rev=-0.1262 tok/s=16684 elapsed=185s
+[8/57] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.0846 p_rev=0.353 eff_canon=+1.1616 eff_rev=+0.1249 tok/s=13456 elapsed=224s
+[9/57] college_mathematics.json seed=0 n=100 shards=10 p_canon=0.0524 p_rev=0.966 eff_canon=+0.8797 eff_rev=-0.7973 tok/s=16491 elapsed=246s
+[10/57] college_medicine.json seed=0 n=173 shards=17 p_canon=0.0087 p_rev=0.608 eff_canon=+1.8748 eff_rev=-0.1620 tok/s=12742 elapsed=317s
+[11/57] college_physics.json seed=0 n=102 shards=10 p_canon=0.602 p_rev=0.764 eff_canon=-0.1347 eff_rev=-0.4325 tok/s=16256 elapsed=340s
+[12/57] computer_security.json seed=0 n=100 shards=10 p_canon=0.447 p_rev=0.36 eff_canon=+0.0703 eff_rev=+0.1049 tok/s=16794 elapsed=358s
+[13/57] conceptual_physics.json seed=0 n=235 shards=23 p_canon=0.701 p_rev=9.42e-06 eff_canon=-0.1217 eff_rev=+0.9324 tok/s=17901 elapsed=384s
+[14/57] econometrics.json seed=0 n=114 shards=11 p_canon=0.334 p_rev=0.847 eff_canon=+0.3331 eff_rev=-0.4471 tok/s=15168 elapsed=421s
+[15/57] electrical_engineering.json seed=0 n=145 shards=14 p_canon=0.169 p_rev=0.951 eff_canon=+0.4620 eff_rev=-0.6824 tok/s=17719 elapsed=437s
+[16/57] elementary_mathematics.json seed=0 n=378 shards=37 p_canon=0.034 p_rev=0.759 eff_canon=+0.4117 eff_rev=-0.2082 tok/s=17298 elapsed=493s
+[17/57] formal_logic.json seed=0 n=126 shards=12 p_canon=0.398 p_rev=0.625 eff_canon=+0.1642 eff_rev=-0.5649 tok/s=12828 elapsed=546s
+[18/57] global_facts.json seed=0 n=100 shards=10 p_canon=0.134 p_rev=0.466 eff_canon=+0.4917 eff_rev=+0.0408 tok/s=17827 elapsed=558s
+[19/57] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.168 p_rev=0.81 eff_canon=+0.3881 eff_rev=-0.2089 tok/s=16419 elapsed=627s
+[20/57] high_school_chemistry.json seed=0 n=203 shards=20 p_canon=0.11 p_rev=0.516 eff_canon=+0.3215 eff_rev=-0.0143 tok/s=16010 elapsed=674s
+[21/57] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.0612 p_rev=0.493 eff_canon=+2.4020 eff_rev=+0.0122 tok/s=12830 elapsed=715s
+[22/57] high_school_european_history.json seed=0 n=165 shards=16 p_canon=0.00174 p_rev=0.259 eff_canon=+30.1194 eff_rev=+6.0109 tok/s=9664 elapsed=1019s
+[23/57] high_school_geography.json seed=0 n=198 shards=19 p_canon=0.262 p_rev=0.723 eff_canon=+0.1869 eff_rev=-0.1352 tok/s=17533 elapsed=1043s
+[24/57] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.442 p_rev=0.07 eff_canon=+0.0555 eff_rev=+0.4240 tok/s=16827 elapsed=1080s
+[25/57] high_school_macroeconomics.json seed=0 n=390 shards=39 p_canon=0.0975 p_rev=0.823 eff_canon=+0.2612 eff_rev=-0.2069 tok/s=16992 elapsed=1148s
+[26/57] high_school_mathematics.json seed=0 n=270 shards=27 p_canon=0.583 p_rev=0.327 eff_canon=-0.0587 eff_rev=+0.1181 tok/s=16832 elapsed=1199s
+[27/57] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.468 p_rev=0.486 eff_canon=+0.0523 eff_rev=+0.0092 tok/s=16535 elapsed=1245s
+[28/57] high_school_physics.json seed=0 n=151 shards=15 p_canon=0.101 p_rev=0.692 eff_canon=+0.4509 eff_rev=-0.1596 tok/s=15667 elapsed=1290s
+[29/57] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.0427 p_rev=0.658 eff_canon=+0.4990 eff_rev=-0.0809 tok/s=16779 elapsed=1386s
+[30/57] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.146 p_rev=0.499 eff_canon=+0.4427 eff_rev=-0.0333 tok/s=13049 elapsed=1478s
+[31/57] high_school_us_history.json seed=0 n=204 shards=20 p_canon=0.000189 p_rev=0.847 eff_canon=+25.3683 eff_rev=-5.3006 tok/s=9756 elapsed=1800s
+[32/57] high_school_world_history.json seed=0 n=237 shards=23 p_canon=7.63e-06 p_rev=0.976 eff_canon=+21.7274 eff_rev=-8.5570 tok/s=9601 elapsed=2236s
+[33/57] human_aging.json seed=0 n=223 shards=22 p_canon=0.845 p_rev=0.724 eff_canon=-0.3070 eff_rev=-0.1461 tok/s=17788 elapsed=2263s
+[34/57] human_sexuality.json seed=0 n=131 shards=13 p_canon=0.0185 p_rev=0.208 eff_canon=+0.5637 eff_rev=+0.3012 tok/s=17145 elapsed=2283s
+[35/57] international_law.json seed=0 n=121 shards=12 p_canon=0.431 p_rev=0.405 eff_canon=+0.0596 eff_rev=+0.0953 tok/s=16063 elapsed=2315s
+[36/57] jurisprudence.json seed=0 n=108 shards=10 p_canon=0.665 p_rev=0.451 eff_canon=-0.1770 eff_rev=+0.0625 tok/s=16526 elapsed=2336s
+[37/57] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.176 p_rev=0.0993 eff_canon=+0.5578 eff_rev=+0.4869 tok/s=16670 elapsed=2367s
+[38/57] machine_learning.json seed=0 n=112 shards=11 p_canon=0.376 p_rev=0.853 eff_canon=+0.2857 eff_rev=-0.5167 tok/s=15901 elapsed=2393s
+[39/57] management.json seed=0 n=103 shards=10 p_canon=0.838 p_rev=0.147 eff_canon=-0.3620 eff_rev=+0.3605 tok/s=17850 elapsed=2404s
+[40/57] marketing.json seed=0 n=234 shards=23 p_canon=0.406 p_rev=0.945 eff_canon=+0.0775 eff_rev=-0.5121 tok/s=17148 elapsed=2439s
+[41/57] medical_genetics.json seed=0 n=100 shards=10 p_canon=0.531 p_rev=0.873 eff_canon=-0.0366 eff_rev=-0.4519 tok/s=17625 elapsed=2453s
+[42/57] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.274 p_rev=0.604 eff_canon=+0.0808 eff_rev=-0.0404 tok/s=16667 elapsed=2551s
+[43/57] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.0402 p_rev=0.989 eff_canon=+0.7147 eff_rev=-0.6331 tok/s=16983 elapsed=2614s
+[44/57] moral_scenarios.json seed=0 n=895 shards=50 p_canon=0.567 p_rev=0.812 eff_canon=-0.0180 eff_rev=-0.0785 tok/s=10688 elapsed=3043s
+[45/57] nutrition.json seed=0 n=306 shards=30 p_canon=0.435 p_rev=0.683 eff_canon=+0.0531 eff_rev=-0.1347 tok/s=16732 elapsed=3104s
+[46/57] philosophy.json seed=0 n=311 shards=31 p_canon=0.0932 p_rev=0.969 eff_canon=+0.5631 eff_rev=-0.4081 tok/s=17053 elapsed=3154s
+[47/57] prehistory.json seed=0 n=324 shards=32 p_canon=0.545 p_rev=0.162 eff_canon=-0.0234 eff_rev=+0.2454 tok/s=17002 elapsed=3210s
+[48/57] professional_accounting.json seed=0 n=282 shards=28 p_canon=0.831 p_rev=0.611 eff_canon=-0.3095 eff_rev=-0.1220 tok/s=15510 elapsed=3295s
+[49/57] professional_law.json seed=0 n=1534 shards=50 p_canon=4.28e-31 p_rev=3.11e-08 eff_canon=+23.8653 eff_rev=+2.1258 tok/s=9038 elapsed=5445s
+[50/57] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.000413 p_rev=0.575 eff_canon=+3.0206 eff_rev=-0.1332 tok/s=10764 elapsed=5679s
+[51/57] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.009 p_rev=0.406 eff_canon=+0.6094 eff_rev=+0.0550 tok/s=15612 elapsed=5824s
+[52/57] public_relations.json seed=0 n=110 shards=11 p_canon=0.161 p_rev=0.114 eff_canon=+0.3362 eff_rev=+0.4652 tok/s=17171 elapsed=5840s
+[53/57] security_studies.json seed=0 n=245 shards=24 p_canon=0.0987 p_rev=0.637 eff_canon=+0.6426 eff_rev=-0.1631 tok/s=11487 elapsed=6002s
+[54/57] sociology.json seed=0 n=201 shards=20 p_canon=0.0869 p_rev=0.542 eff_canon=+0.3745 eff_rev=-0.0329 tok/s=16832 elapsed=6040s
+[55/57] us_foreign_policy.json seed=0 n=100 shards=10 p_canon=0.9 p_rev=0.233 eff_canon=-0.4408 eff_rev=+0.2743 tok/s=17067 elapsed=6056s
+[56/57] virology.json seed=0 n=166 shards=16 p_canon=0.23 p_rev=0.62 eff_canon=+0.2318 eff_rev=-0.0697 tok/s=17199 elapsed=6081s
+[57/57] world_religions.json seed=0 n=171 shards=17 p_canon=0.546 p_rev=0.433 eff_canon=-0.0420 eff_rev=+0.0509 tok/s=18057 elapsed=6098s
+[run_test] model=EleutherAI/pythia-1.4b tag=k10 files=57 seeds=[0] todo=57
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/57] abstract_algebra.json seed=0 n=100 shards=10 p_canon=0.804 p_rev=0.389 eff_canon=-0.1765 eff_rev=+0.1192 tok/s=31369 elapsed=9s
+[2/57] anatomy.json seed=0 n=135 shards=13 p_canon=0.896 p_rev=0.672 eff_canon=-0.4562 eff_rev=-0.1965 tok/s=31499 elapsed=20s
+[3/57] astronomy.json seed=0 n=152 shards=15 p_canon=0.104 p_rev=0.887 eff_canon=+0.2910 eff_rev=-0.4120 tok/s=30914 elapsed=37s
+[4/57] business_ethics.json seed=0 n=100 shards=10 p_canon=0.000396 p_rev=0.734 eff_canon=+1.0168 eff_rev=-0.2787 tok/s=30950 elapsed=48s
+[5/57] clinical_knowledge.json seed=0 n=265 shards=26 p_canon=0.269 p_rev=0.654 eff_canon=+0.1720 eff_rev=-0.1464 tok/s=31694 elapsed=69s
+[6/57] college_biology.json seed=0 n=144 shards=14 p_canon=0.949 p_rev=0.117 eff_canon=-0.6714 eff_rev=+0.4914 tok/s=30907 elapsed=86s
+[7/57] college_chemistry.json seed=0 n=100 shards=10 p_canon=0.0864 p_rev=0.549 eff_canon=+0.4946 eff_rev=-0.0754 tok/s=31146 elapsed=97s
+[8/57] college_computer_science.json seed=0 n=100 shards=10 p_canon=0.0486 p_rev=0.871 eff_canon=+1.5560 eff_rev=-0.6636 tok/s=29840 elapsed=114s
+[9/57] college_mathematics.json seed=0 n=100 shards=10 p_canon=0.201 p_rev=0.635 eff_canon=+0.3847 eff_rev=-0.1206 tok/s=31287 elapsed=125s
+[10/57] college_medicine.json seed=0 n=173 shards=17 p_canon=0.00421 p_rev=0.541 eff_canon=+1.4503 eff_rev=-0.0534 tok/s=28630 elapsed=156s
+[11/57] college_physics.json seed=0 n=102 shards=10 p_canon=0.762 p_rev=0.363 eff_canon=-0.3753 eff_rev=+0.1244 tok/s=30932 elapsed=168s
+[12/57] computer_security.json seed=0 n=100 shards=10 p_canon=0.11 p_rev=0.571 eff_canon=+0.7486 eff_rev=-0.0824 tok/s=31493 elapsed=177s
+[13/57] conceptual_physics.json seed=0 n=235 shards=23 p_canon=0.613 p_rev=0.0807 eff_canon=-0.0583 eff_rev=+0.3742 tok/s=32405 elapsed=191s
+[14/57] econometrics.json seed=0 n=114 shards=11 p_canon=0.159 p_rev=0.413 eff_canon=+0.3471 eff_rev=+0.1164 tok/s=30152 elapsed=210s
+[15/57] electrical_engineering.json seed=0 n=145 shards=14 p_canon=0.656 p_rev=0.64 eff_canon=-0.1494 eff_rev=-0.1254 tok/s=32236 elapsed=218s
+[16/57] elementary_mathematics.json seed=0 n=378 shards=37 p_canon=0.205 p_rev=0.518 eff_canon=+0.2012 eff_rev=-0.0029 tok/s=31778 elapsed=249s
+[17/57] formal_logic.json seed=0 n=126 shards=12 p_canon=0.212 p_rev=0.72 eff_canon=+0.3534 eff_rev=-0.3973 tok/s=29299 elapsed=272s
+[18/57] global_facts.json seed=0 n=100 shards=10 p_canon=0.0963 p_rev=0.438 eff_canon=+0.4024 eff_rev=+0.0418 tok/s=32281 elapsed=278s
+[19/57] high_school_biology.json seed=0 n=310 shards=31 p_canon=0.186 p_rev=0.654 eff_canon=+0.2912 eff_rev=-0.1063 tok/s=30827 elapsed=314s
+[20/57] high_school_chemistry.json seed=0 n=203 shards=20 p_canon=0.296 p_rev=0.91 eff_canon=+0.1786 eff_rev=-0.4612 tok/s=31087 elapsed=338s
+[21/57] high_school_computer_science.json seed=0 n=100 shards=10 p_canon=0.149 p_rev=0.664 eff_canon=+1.3490 eff_rev=-0.2515 tok/s=30063 elapsed=356s
+[22/57] high_school_european_history.json seed=0 n=165 shards=16 p_canon=0.00491 p_rev=0.184 eff_canon=+21.4012 eff_rev=+5.2558 tok/s=16962 elapsed=531s
+[23/57] high_school_geography.json seed=0 n=198 shards=19 p_canon=0.548 p_rev=0.957 eff_canon=-0.0304 eff_rev=-0.6397 tok/s=32225 elapsed=544s
+[24/57] high_school_government_and_politics.json seed=0 n=193 shards=19 p_canon=0.394 p_rev=0.391 eff_canon=+0.0781 eff_rev=+0.0720 tok/s=31115 elapsed=564s
+[25/57] high_school_macroeconomics.json seed=0 n=390 shards=39 p_canon=0.0202 p_rev=0.936 eff_canon=+0.4721 eff_rev=-0.3092 tok/s=31607 elapsed=601s
+[26/57] high_school_mathematics.json seed=0 n=270 shards=27 p_canon=0.138 p_rev=0.244 eff_canon=+0.2042 eff_rev=+0.1582 tok/s=31383 elapsed=627s
+[27/57] high_school_microeconomics.json seed=0 n=238 shards=23 p_canon=0.196 p_rev=0.0993 eff_canon=+0.2670 eff_rev=+0.3495 tok/s=31025 elapsed=652s
+[28/57] high_school_physics.json seed=0 n=151 shards=15 p_canon=0.278 p_rev=0.238 eff_canon=+0.2667 eff_rev=+0.2546 tok/s=30212 elapsed=675s
+[29/57] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.00297 p_rev=0.603 eff_canon=+0.9250 eff_rev=-0.0627 tok/s=31316 elapsed=726s
+[30/57] high_school_statistics.json seed=0 n=216 shards=21 p_canon=0.37 p_rev=0.357 eff_canon=+0.1508 eff_rev=+0.1448 tok/s=29194 elapsed=767s
+[31/57] high_school_us_history.json seed=0 n=204 shards=20 p_canon=6.05e-05 p_rev=0.394 eff_canon=+26.7312 eff_rev=+1.5924 tok/s=17462 elapsed=950s
+[32/57] high_school_world_history.json seed=0 n=237 shards=23 p_canon=9.09e-05 p_rev=0.929 eff_canon=+20.7266 eff_rev=-4.4586 tok/s=17063 elapsed=1199s
+[33/57] human_aging.json seed=0 n=223 shards=22 p_canon=0.287 p_rev=0.404 eff_canon=+0.1403 eff_rev=+0.0632 tok/s=32196 elapsed=1214s
+[34/57] human_sexuality.json seed=0 n=131 shards=13 p_canon=0.435 p_rev=0.317 eff_canon=+0.0547 eff_rev=+0.1660 tok/s=31847 elapsed=1225s
+[35/57] international_law.json seed=0 n=121 shards=12 p_canon=0.27 p_rev=0.769 eff_canon=+0.2334 eff_rev=-0.2803 tok/s=30629 elapsed=1242s
+[36/57] jurisprudence.json seed=0 n=108 shards=10 p_canon=0.399 p_rev=0.554 eff_canon=+0.1157 eff_rev=-0.0537 tok/s=31130 elapsed=1252s
+[37/57] logical_fallacies.json seed=0 n=163 shards=16 p_canon=0.0383 p_rev=0.64 eff_canon=+0.9674 eff_rev=-0.1246 tok/s=31385 elapsed=1269s
+[38/57] machine_learning.json seed=0 n=112 shards=11 p_canon=0.264 p_rev=0.208 eff_canon=+0.4885 eff_rev=+0.3948 tok/s=31031 elapsed=1282s
+[39/57] management.json seed=0 n=103 shards=10 p_canon=0.985 p_rev=0.00029 eff_canon=-0.8251 eff_rev=+1.2307 tok/s=32285 elapsed=1288s
+[40/57] marketing.json seed=0 n=234 shards=23 p_canon=0.141 p_rev=0.527 eff_canon=+0.3256 eff_rev=-0.0257 tok/s=31866 elapsed=1307s
+[41/57] medical_genetics.json seed=0 n=100 shards=10 p_canon=0.352 p_rev=0.553 eff_canon=+0.1917 eff_rev=-0.0492 tok/s=32080 elapsed=1314s
+[42/57] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.0881 p_rev=0.69 eff_canon=+0.2118 eff_rev=-0.0719 tok/s=31227 elapsed=1367s
+[43/57] moral_disputes.json seed=0 n=346 shards=34 p_canon=0.0746 p_rev=0.805 eff_canon=+0.5419 eff_rev=-0.1760 tok/s=31454 elapsed=1402s
+[44/57] moral_scenarios.json seed=0 n=895 shards=50 p_canon=0.141 p_rev=0.917 eff_canon=+0.0694 eff_rev=-0.0725 tok/s=24610 elapsed=1589s
+[45/57] nutrition.json seed=0 n=306 shards=30 p_canon=0.712 p_rev=0.872 eff_canon=-0.1664 eff_rev=-0.2948 tok/s=31286 elapsed=1621s
+[46/57] philosophy.json seed=0 n=311 shards=31 p_canon=0.0134 p_rev=0.823 eff_canon=+0.7630 eff_rev=-0.1816 tok/s=31738 elapsed=1647s
+[47/57] prehistory.json seed=0 n=324 shards=32 p_canon=0.0419 p_rev=0.928 eff_canon=+0.4510 eff_rev=-0.3200 tok/s=31482 elapsed=1678s
+[48/57] professional_accounting.json seed=0 n=282 shards=28 p_canon=0.605 p_rev=0.399 eff_canon=-0.0514 eff_rev=+0.0625 tok/s=30359 elapsed=1721s
+[49/57] professional_law.json seed=0 n=1534 shards=50 p_canon=2.82e-32 p_rev=1.45e-05 eff_canon=+23.5220 eff_rev=+1.2336 tok/s=14756 elapsed=3045s
+[50/57] professional_medicine.json seed=0 n=272 shards=27 p_canon=0.0004 p_rev=0.975 eff_canon=+2.9438 eff_rev=-0.7043 tok/s=24360 elapsed=3146s
+[51/57] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.0577 p_rev=0.0986 eff_canon=+0.3618 eff_rev=+0.2171 tok/s=30498 elapsed=3219s
+[52/57] public_relations.json seed=0 n=110 shards=11 p_canon=0.828 p_rev=0.584 eff_canon=-0.2910 eff_rev=-0.0635 tok/s=31761 elapsed=3228s
+[53/57] security_studies.json seed=0 n=245 shards=24 p_canon=0.112 p_rev=0.766 eff_canon=+0.5042 eff_rev=-0.2338 tok/s=26558 elapsed=3299s
+[54/57] sociology.json seed=0 n=201 shards=20 p_canon=0.557 p_rev=0.507 eff_canon=-0.0319 eff_rev=-0.0144 tok/s=31262 elapsed=3319s
+[55/57] us_foreign_policy.json seed=0 n=100 shards=10 p_canon=0.725 p_rev=0.00437 eff_canon=-0.2752 eff_rev=+0.8298 tok/s=31708 elapsed=3328s
+[56/57] virology.json seed=0 n=166 shards=16 p_canon=0.385 p_rev=0.409 eff_canon=+0.1278 eff_rev=+0.0605 tok/s=31919 elapsed=3341s
+[57/57] world_religions.json seed=0 n=171 shards=17 p_canon=0.487 p_rev=0.165 eff_canon=+0.0048 eff_rev=+0.3266 tok/s=32524 elapsed=3351s
+===== STAGE mmlu_k10 end   2026-11-15T10:30:22Z rc=0 =====
+===== STAGE bench start 2026-11-15T10:30:22Z =====
+[run_test] model=gpt2-xl tag=paper50 files=5 seeds=[0] todo=5
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[scorer] OOM -> max_batch_tokens=2048
+[1/5] ARC-Easy-Test.jsonl seed=0 n=2376 shards=50 p_canon=0.937 p_rev=0.651 eff_canon=-0.2126 eff_rev=-0.0481 tok/s=9375 elapsed=1270s
+[2/5] tests.jsonl seed=0 n=3084 shards=50 p_canon=0.977 p_rev=0.845 eff_canon=-0.1581 eff_rev=-0.0894 tok/s=9428 elapsed=2460s
+[3/5] test.jsonl seed=0 n=500 shards=50 p_canon=0.922 p_rev=0.721 eff_canon=-0.2311 eff_rev=-0.0953 tok/s=14933 elapsed=2636s
+[4/5] test.jsonl seed=0 n=1319 shards=50 p_canon=0.757 p_rev=0.7 eff_canon=-0.1766 eff_rev=-0.1495 tok/s=9369 elapsed=3870s
+[5/5] NQ-open.efficientqa.test.1.1.jsonl seed=0 n=1769 shards=50 p_canon=0.45 p_rev=0.407 eff_canon=+0.0100 eff_rev=+0.0220 tok/s=9528 elapsed=4860s
+[run_test] model=EleutherAI/pythia-1.4b tag=paper50 files=5 seeds=[0] todo=5
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/5] ARC-Easy-Test.jsonl seed=0 n=2376 shards=50 p_canon=0.694 p_rev=0.828 eff_canon=-0.0456 eff_rev=-0.1058 tok/s=15992 elapsed=779s
+[2/5] tests.jsonl seed=0 n=3084 shards=50 p_canon=0.963 p_rev=0.373 eff_canon=-0.1876 eff_rev=+0.0230 tok/s=16048 elapsed=1479s
+[3/5] test.jsonl seed=0 n=500 shards=50 p_canon=0.345 p_rev=0.736 eff_canon=+0.0409 eff_rev=-0.0698 tok/s=30030 elapsed=1566s
+[4/5] test.jsonl seed=0 n=1319 shards=50 p_canon=0.615 p_rev=0.581 eff_canon=-0.0455 eff_rev=-0.0313 tok/s=15971 elapsed=2287s
+[5/5] NQ-open.efficientqa.test.1.1.jsonl seed=0 n=1769 shards=50 p_canon=0.941 p_rev=0.608 eff_canon=-0.1174 eff_rev=-0.0232 tok/s=16853 elapsed=2841s
+[run_test] model=gpt2 tag=paper50 files=5 seeds=[0] todo=5
+[run_test] loaded gpt2: 124M params, context=1024, stride=512, dtype=tf32
+[1/5] ARC-Easy-Test.jsonl seed=0 n=2376 shards=50 p_canon=0.938 p_rev=0.687 eff_canon=-0.2110 eff_rev=-0.0624 tok/s=82657 elapsed=144s
+[2/5] tests.jsonl seed=0 n=3084 shards=50 p_canon=0.528 p_rev=0.654 eff_canon=-0.0060 eff_rev=-0.0359 tok/s=83153 elapsed=279s
+[3/5] test.jsonl seed=0 n=500 shards=50 p_canon=0.364 p_rev=0.757 eff_canon=+0.0466 eff_rev=-0.0758 tok/s=124409 elapsed=300s
+[4/5] test.jsonl seed=0 n=1319 shards=50 p_canon=0.717 p_rev=0.69 eff_canon=-0.1376 eff_rev=-0.1321 tok/s=82683 elapsed=440s
+[5/5] NQ-open.efficientqa.test.1.1.jsonl seed=0 n=1769 shards=50 p_canon=0.506 p_rev=0.925 eff_canon=-0.0020 eff_rev=-0.1498 tok/s=84075 elapsed=552s
+[run_test] model=gpt2-medium tag=paper50 files=5 seeds=[0] todo=5
+[run_test] loaded gpt2-medium: 355M params, context=1024, stride=512, dtype=tf32
+[1/5] ARC-Easy-Test.jsonl seed=0 n=2376 shards=50 p_canon=0.983 p_rev=0.909 eff_canon=-0.2862 eff_rev=-0.1710 tok/s=32746 elapsed=364s
+[2/5] tests.jsonl seed=0 n=3084 shards=50 p_canon=0.882 p_rev=0.772 eff_canon=-0.0913 eff_rev=-0.0678 tok/s=32933 elapsed=704s
+[3/5] test.jsonl seed=0 n=500 shards=50 p_canon=0.448 p_rev=0.957 eff_canon=+0.0188 eff_rev=-0.2198 tok/s=51329 elapsed=756s
+[4/5] test.jsonl seed=0 n=1319 shards=50 p_canon=0.419 p_rev=0.981 eff_canon=+0.0511 eff_rev=-0.4033 tok/s=32728 elapsed=1109s
+[5/5] NQ-open.efficientqa.test.1.1.jsonl seed=0 n=1769 shards=50 p_canon=0.627 p_rev=0.828 eff_canon=-0.0227 eff_rev=-0.1073 tok/s=33339 elapsed=1392s
+[run_test] model=gpt2-large tag=paper50 files=5 seeds=[0] todo=5
+[run_test] loaded gpt2-large: 774M params, context=1024, stride=512, dtype=tf32
+[1/5] ARC-Easy-Test.jsonl seed=0 n=2376 shards=50 p_canon=0.989 p_rev=0.855 eff_canon=-0.2929 eff_rev=-0.1266 tok/s=17438 elapsed=683s
+[2/5] tests.jsonl seed=0 n=3084 shards=50 p_canon=0.554 p_rev=0.686 eff_canon=-0.0116 eff_rev=-0.0423 tok/s=17570 elapsed=1322s
+[3/5] test.jsonl seed=0 n=500 shards=50 p_canon=0.691 p_rev=0.106 eff_canon=-0.0831 eff_rev=+0.2289 tok/s=27682 elapsed=1416s
+[4/5] test.jsonl seed=0 n=1319 shards=50 p_canon=0.827 p_rev=0.671 eff_canon=-0.2278 eff_rev=-0.0915 tok/s=17470 elapsed=2078s
+[5/5] NQ-open.efficientqa.test.1.1.jsonl seed=0 n=1769 shards=50 p_canon=0.698 p_rev=0.375 eff_canon=-0.0488 eff_rev=+0.0320 tok/s=17792 elapsed=2608s
+===== STAGE bench end   2026-11-15T13:55:16Z rc=0 =====
+===== STAGE canary_seeds start 2026-11-15T13:55:16Z =====
+[run_test] model=yonatano/contam-1.4b-dupcount-higher tag=paper50 files=10 seeds=[0, 1, 2] todo=20
+[run_test] loaded yonatano/contam-1.4b-dupcount-higher: 1440M params, context=2048, stride=1024, dtype=tf32
+[1/20] boolq.jsonl seed=1 n=1000 shards=50 p_canon=0.187 p_rev=0.968 eff_canon=+0.2192 eff_rev=-0.4893 tok/s=10234 elapsed=798s
+[2/20] boolq.jsonl seed=2 n=1000 shards=50 p_canon=0.139 p_rev=0.95 eff_canon=+0.2747 eff_rev=-0.4337 tok/s=10240 elapsed=1564s
+[3/20] hellaswag.jsonl seed=1 n=1000 shards=50 p_canon=0.504 p_rev=0.927 eff_canon=-0.0034 eff_rev=-0.4499 tok/s=9119 elapsed=3069s
+[4/20] hellaswag.jsonl seed=2 n=1000 shards=50 p_canon=0.547 p_rev=0.946 eff_canon=-0.0393 eff_rev=-0.4858 tok/s=9118 elapsed=4515s
+[5/20] mmlu_high_school_psychology.jsonl seed=1 n=544 shards=50 p_canon=9.24e-30 p_rev=1 eff_canon=+8.8714 eff_rev=-3.2987 tok/s=18448 elapsed=4641s
+[6/20] mmlu_high_school_psychology.jsonl seed=2 n=544 shards=50 p_canon=2.22e-30 p_rev=1 eff_canon=+8.7554 eff_rev=-3.4147 tok/s=18432 elapsed=4761s
+[7/20] mmlu_professional_law.jsonl seed=1 n=1533 shards=50 p_canon=5.25e-53 p_rev=1 eff_canon=+22.1837 eff_rev=-1.7932 tok/s=8571 elapsed=7252s
+[8/20] mmlu_professional_law.jsonl seed=2 n=1533 shards=50 p_canon=9.95e-54 p_rev=1 eff_canon=+22.0993 eff_rev=-1.8776 tok/s=8569 elapsed=9647s
+[9/20] mmlu_professional_psychology.jsonl seed=1 n=611 shards=50 p_canon=4.92e-35 p_rev=1 eff_canon=+8.6199 eff_rev=-3.1179 tok/s=17456 elapsed=9823s
+[10/20] mmlu_professional_psychology.jsonl seed=2 n=611 shards=50 p_canon=6.85e-35 p_rev=1 eff_canon=+8.6660 eff_rev=-3.0717 tok/s=17507 elapsed=9992s
+[11/20] mnli.jsonl seed=1 n=1000 shards=50 p_canon=6.56e-10 p_rev=0.656 eff_canon=+1.2873 eff_rev=-0.0839 tok/s=8526 elapsed=12770s
+[12/20] mnli.jsonl seed=2 n=1000 shards=50 p_canon=1.04e-10 p_rev=0.571 eff_canon=+1.3347 eff_rev=-0.0365 tok/s=8525 elapsed=15442s
+[13/20] naturalquestions.jsonl seed=1 n=1000 shards=50 p_canon=9.91e-19 p_rev=1 eff_canon=+1.1344 eff_rev=-0.3741 tok/s=12686 elapsed=15861s
+[14/20] naturalquestions.jsonl seed=2 n=1000 shards=50 p_canon=4.39e-18 p_rev=1 eff_canon=+1.1216 eff_rev=-0.3868 tok/s=12669 elapsed=16265s
+[15/20] openbookqa.jsonl seed=1 n=500 shards=50 p_canon=0.394 p_rev=0.632 eff_canon=+0.0600 eff_rev=-0.0864 tok/s=18920 elapsed=16364s
+[16/20] openbookqa.jsonl seed=2 n=500 shards=50 p_canon=0.352 p_rev=0.594 eff_canon=+0.0856 eff_rev=-0.0608 tok/s=18937 elapsed=16458s
+[17/20] piqa.jsonl seed=1 n=1000 shards=50 p_canon=4.11e-38 p_rev=1 eff_canon=+9.5557 eff_rev=-2.7376 tok/s=16121 elapsed=16686s
+[18/20] piqa.jsonl seed=2 n=1000 shards=50 p_canon=3.15e-39 p_rev=1 eff_canon=+9.5012 eff_rev=-2.7922 tok/s=16121 elapsed=16906s
+[19/20] truthfulqa.jsonl seed=1 n=1000 shards=50 p_canon=9.3e-13 p_rev=1 eff_canon=+0.8520 eff_rev=-0.3419 tok/s=18321 elapsed=17040s
+[20/20] truthfulqa.jsonl seed=2 n=1000 shards=50 p_canon=2.36e-12 p_rev=1 eff_canon=+0.8475 eff_rev=-0.3464 tok/s=18290 elapsed=17170s
+===== STAGE canary_seeds end   2026-11-15T18:41:37Z rc=0 =====
+===== STAGE controls_b start 2026-11-15T18:41:37Z =====
+[run_test] model=gpt2-large tag=ctrl files=20 seeds=[0] todo=20
+[run_test] loaded gpt2-large: 774M params, context=1024, stride=512, dtype=tf32
+[1/20] ARC-Easy-Test.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.0252 p_rev=0.135 eff_canon=+0.3702 eff_rev=+0.1947 tok/s=20221 elapsed=248s
+[2/20] ARC-Easy-Test.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.588 p_rev=0.509 eff_canon=-0.0367 eff_rev=-0.0042 tok/s=20201 elapsed=495s
+[3/20] ARC-Easy-Test.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.423 p_rev=0.0482 eff_canon=+0.0336 eff_rev=+0.3212 tok/s=20564 elapsed=738s
+[4/20] ARC-Easy-Test.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.86 p_rev=0.392 eff_canon=-0.2066 eff_rev=+0.0500 tok/s=20328 elapsed=986s
+[5/20] ARC-Easy-Test.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.0127 p_rev=0.24 eff_canon=+0.3845 eff_rev=+0.1138 tok/s=20354 elapsed=1232s
+[6/20] ARC-Easy-Test.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.0331 p_rev=0.00167 eff_canon=+0.4107 eff_rev=+0.6801 tok/s=20260 elapsed=1479s
+[7/20] ARC-Easy-Test.sorted1.txt seed=0 n=1000 shards=50 p_canon=1.7e-05 p_rev=0.000134 eff_canon=+0.9630 eff_rev=+0.8611 tok/s=20224 elapsed=1726s
+[8/20] ARC-Easy-Test.sorted2.txt seed=0 n=1000 shards=50 p_canon=1.82e-05 p_rev=0.000748 eff_canon=+1.1453 eff_rev=+0.8945 tok/s=20270 elapsed=1973s
+[9/20] ARC-Easy-Test.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.00215 p_rev=0.0468 eff_canon=+0.6256 eff_rev=+0.3508 tok/s=20127 elapsed=2223s
+[10/20] ARC-Easy-Test.sorted4.txt seed=0 n=1000 shards=50 p_canon=6.39e-06 p_rev=0.0001 eff_canon=+0.9837 eff_rev=+0.8022 tok/s=20183 elapsed=2470s
+[11/20] tests.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.94 p_rev=0.959 eff_canon=-0.1617 eff_rev=-0.1933 tok/s=21734 elapsed=2638s
+[12/20] tests.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.0589 p_rev=0.257 eff_canon=+0.1839 eff_rev=+0.0678 tok/s=21382 elapsed=2813s
+[13/20] tests.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.481 p_rev=0.966 eff_canon=+0.0056 eff_rev=-0.2081 tok/s=22153 elapsed=2976s
+[14/20] tests.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.389 p_rev=0.106 eff_canon=+0.0304 eff_rev=+0.1329 tok/s=22043 elapsed=3134s
+[15/20] tests.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.209 p_rev=0.199 eff_canon=+0.0980 eff_rev=+0.1034 tok/s=21892 elapsed=3295s
+[16/20] tests.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.04 p_rev=0.239 eff_canon=+0.3048 eff_rev=+0.1419 tok/s=21869 elapsed=3461s
+[17/20] tests.sorted1.txt seed=0 n=1000 shards=50 p_canon=0.0491 p_rev=0.134 eff_canon=+0.3800 eff_rev=+0.2568 tok/s=21538 elapsed=3635s
+[18/20] tests.sorted2.txt seed=0 n=1000 shards=50 p_canon=0.000221 p_rev=6.86e-05 eff_canon=+0.5843 eff_rev=+0.4685 tok/s=22033 elapsed=3799s
+[19/20] tests.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.00649 p_rev=8.02e-05 eff_canon=+0.3019 eff_rev=+0.4004 tok/s=22348 elapsed=3955s
+[20/20] tests.sorted4.txt seed=0 n=1000 shards=50 p_canon=7.28e-05 p_rev=0.000164 eff_canon=+0.5400 eff_rev=+0.4839 tok/s=22376 elapsed=4112s
+[run_test] model=EleutherAI/pythia-1.4b tag=ctrl files=20 seeds=[0] todo=20
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/20] ARC-Easy-Test.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.317 p_rev=0.129 eff_canon=+0.0392 eff_rev=+0.0902 tok/s=22943 elapsed=228s
+[2/20] ARC-Easy-Test.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.94 p_rev=0.0142 eff_canon=-0.1077 eff_rev=+0.1960 tok/s=22669 elapsed=458s
+[3/20] ARC-Easy-Test.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.877 p_rev=0.146 eff_canon=-0.1045 eff_rev=+0.1109 tok/s=22489 elapsed=691s
+[4/20] ARC-Easy-Test.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.0798 p_rev=0.593 eff_canon=+0.1326 eff_rev=-0.0197 tok/s=21966 elapsed=931s
+[5/20] ARC-Easy-Test.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.145 p_rev=0.997 eff_canon=+0.0972 eff_rev=-0.2465 tok/s=22559 elapsed=1162s
+[6/20] ARC-Easy-Test.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.0109 p_rev=0.0972 eff_canon=+0.2412 eff_rev=+0.1368 tok/s=22005 elapsed=1401s
+[7/20] ARC-Easy-Test.sorted1.txt seed=0 n=1000 shards=50 p_canon=0.00207 p_rev=0.00464 eff_canon=+0.2698 eff_rev=+0.2251 tok/s=22173 elapsed=1636s
+[8/20] ARC-Easy-Test.sorted2.txt seed=0 n=1000 shards=50 p_canon=0.000986 p_rev=0.000383 eff_canon=+0.3243 eff_rev=+0.4072 tok/s=22831 elapsed=1865s
+[9/20] ARC-Easy-Test.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.00144 p_rev=0.233 eff_canon=+0.3228 eff_rev=+0.0660 tok/s=22033 elapsed=2104s
+[10/20] ARC-Easy-Test.sorted4.txt seed=0 n=1000 shards=50 p_canon=6.72e-05 p_rev=0.236 eff_canon=+0.4192 eff_rev=+0.0696 tok/s=22662 elapsed=2335s
+[11/20] tests.shuffled0.txt seed=0 n=1000 shards=50 p_canon=0.985 p_rev=0.766 eff_canon=-0.1588 eff_rev=-0.0626 tok/s=27033 elapsed=2470s
+[12/20] tests.shuffled1.txt seed=0 n=1000 shards=50 p_canon=0.262 p_rev=0.703 eff_canon=+0.0516 eff_rev=-0.0397 tok/s=26736 elapsed=2610s
+[13/20] tests.shuffled2.txt seed=0 n=1000 shards=50 p_canon=0.237 p_rev=0.534 eff_canon=+0.0551 eff_rev=-0.0067 tok/s=27151 elapsed=2743s
+[14/20] tests.shuffled3.txt seed=0 n=1000 shards=50 p_canon=0.0746 p_rev=0.973 eff_canon=+0.1111 eff_rev=-0.1321 tok/s=27871 elapsed=2869s
+[15/20] tests.shuffled4.txt seed=0 n=1000 shards=50 p_canon=0.064 p_rev=0.623 eff_canon=+0.1322 eff_rev=-0.0249 tok/s=27632 elapsed=2996s
+[16/20] tests.sorted0.txt seed=0 n=1000 shards=50 p_canon=0.0145 p_rev=0.00311 eff_canon=+0.2332 eff_rev=+0.1947 tok/s=26342 elapsed=3135s
+[17/20] tests.sorted1.txt seed=0 n=1000 shards=50 p_canon=0.255 p_rev=0.611 eff_canon=+0.0824 eff_rev=-0.0438 tok/s=26292 elapsed=3278s
+[18/20] tests.sorted2.txt seed=0 n=1000 shards=50 p_canon=0.0222 p_rev=0.00184 eff_canon=+0.1846 eff_rev=+0.2739 tok/s=26888 elapsed=3412s
+[19/20] tests.sorted3.txt seed=0 n=1000 shards=50 p_canon=0.0384 p_rev=0.165 eff_canon=+0.1731 eff_rev=+0.0792 tok/s=27597 elapsed=3539s
+[20/20] tests.sorted4.txt seed=0 n=1000 shards=50 p_canon=0.000513 p_rev=0.000838 eff_canon=+0.2870 eff_rev=+0.2930 tok/s=27070 elapsed=3669s
+===== STAGE controls_b end   2026-11-15T20:51:35Z rc=0 =====
+===== STAGE mmlu_p50 start 2026-11-15T20:51:35Z =====
+[run_test] model=gpt2-xl tag=paper50 files=57 seeds=[0] todo=57
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[scorer] OOM -> max_batch_tokens=2048
+[1/57] abstract_algebra.json seed=0 n=100 shards=50 p_canon=0.859 p_rev=0.0867 eff_canon=-0.4832 eff_rev=+0.5514 tok/s=18413 elapsed=16s
+[2/57] anatomy.json seed=0 n=135 shards=50 p_canon=0.467 p_rev=0.765 eff_canon=+0.0301 eff_rev=-0.2179 tok/s=18778 elapsed=36s
+[3/57] astronomy.json seed=0 n=152 shards=50 p_canon=0.00509 p_rev=1 eff_canon=+0.6620 eff_rev=-0.8785 tok/s=18678 elapsed=63s
+[4/57] business_ethics.json seed=0 n=100 shards=50 p_canon=0.805 p_rev=0.193 eff_canon=-0.3950 eff_rev=+0.3656 tok/s=18752 elapsed=82s
+[5/57] clinical_knowledge.json seed=0 n=265 shards=50 p_canon=0.00517 p_rev=0.709 eff_canon=+0.8013 eff_rev=-0.1733 tok/s=18316 elapsed=120s
+[6/57] college_biology.json seed=0 n=144 shards=50 p_canon=0.333 p_rev=0.847 eff_canon=+0.2011 eff_rev=-0.4148 tok/s=18609 elapsed=148s
+[7/57] college_chemistry.json seed=0 n=100 shards=50 p_canon=0.347 p_rev=0.648 eff_canon=+0.1681 eff_rev=-0.1512 tok/s=18758 elapsed=167s
+[8/57] college_computer_science.json seed=0 n=100 shards=50 p_canon=0.524 p_rev=0.549 eff_canon=-0.0270 eff_rev=-0.0520 tok/s=18564 elapsed=195s
+[9/57] college_mathematics.json seed=0 n=100 shards=50 p_canon=0.348 p_rev=0.754 eff_canon=+0.2130 eff_rev=-0.3416 tok/s=18708 elapsed=215s
+[10/57] college_medicine.json seed=0 n=173 shards=50 p_canon=0.413 p_rev=0.723 eff_canon=+0.0183 eff_rev=-0.2062 tok/s=15807 elapsed=272s
+[11/57] college_physics.json seed=0 n=102 shards=50 p_canon=0.723 p_rev=0.221 eff_canon=-0.2034 eff_rev=+0.2499 tok/s=18803 elapsed=292s
+[12/57] computer_security.json seed=0 n=100 shards=50 p_canon=0.217 p_rev=0.822 eff_canon=+0.3360 eff_rev=-0.3784 tok/s=18753 elapsed=308s
+[13/57] conceptual_physics.json seed=0 n=235 shards=50 p_canon=0.621 p_rev=0.00445 eff_canon=-0.0713 eff_rev=+0.5896 tok/s=18751 elapsed=333s
+[14/57] econometrics.json seed=0 n=114 shards=50 p_canon=0.534 p_rev=0.545 eff_canon=-0.1235 eff_rev=+0.0376 tok/s=18446 elapsed=364s
+[15/57] electrical_engineering.json seed=0 n=145 shards=50 p_canon=0.479 p_rev=0.334 eff_canon=+0.0462 eff_rev=+0.1351 tok/s=18853 elapsed=379s
+[16/57] elementary_mathematics.json seed=0 n=378 shards=50 p_canon=0.312 p_rev=0.733 eff_canon=+0.1450 eff_rev=-0.1675 tok/s=17993 elapsed=433s
+[17/57] formal_logic.json seed=0 n=126 shards=50 p_canon=0.971 p_rev=0.596 eff_canon=-0.5518 eff_rev=-0.0703 tok/s=18094 elapsed=470s
+[18/57] global_facts.json seed=0 n=100 shards=50 p_canon=0.324 p_rev=0.667 eff_canon=+0.1942 eff_rev=-0.1837 tok/s=19058 elapsed=481s
+[19/57] high_school_biology.json seed=0 n=310 shards=50 p_canon=0.469 p_rev=0.381 eff_canon=+0.0013 eff_rev=+0.0957 tok/s=17573 elapsed=546s
+[20/57] high_school_chemistry.json seed=0 n=203 shards=50 p_canon=0.563 p_rev=0.915 eff_canon=-0.0606 eff_rev=-0.4597 tok/s=18103 elapsed=588s
+[21/57] high_school_computer_science.json seed=0 n=100 shards=50 p_canon=0.0323 p_rev=0.944 eff_canon=+1.0949 eff_rev=-0.8577 tok/s=18462 elapsed=616s
+[22/57] high_school_european_history.json seed=0 n=165 shards=50 p_canon=5.84e-11 p_rev=0.931 eff_canon=+13.3425 eff_rev=-6.0864 tok/s=12536 elapsed=850s
+[23/57] high_school_geography.json seed=0 n=198 shards=50 p_canon=0.652 p_rev=0.478 eff_canon=-0.1406 eff_rev=+0.0127 tok/s=18848 elapsed=873s
+[24/57] high_school_government_and_politics.json seed=0 n=193 shards=50 p_canon=0.331 p_rev=0.34 eff_canon=+0.1117 eff_rev=+0.1512 tok/s=18467 elapsed=906s
+[25/57] high_school_macroeconomics.json seed=0 n=390 shards=50 p_canon=0.188 p_rev=0.856 eff_canon=+0.1529 eff_rev=-0.1816 tok/s=17501 elapsed=973s
+[26/57] high_school_mathematics.json seed=0 n=270 shards=50 p_canon=0.213 p_rev=0.372 eff_canon=+0.2554 eff_rev=+0.1151 tok/s=18075 elapsed=1020s
+[27/57] high_school_microeconomics.json seed=0 n=238 shards=50 p_canon=0.128 p_rev=0.674 eff_canon=+0.4182 eff_rev=-0.1565 tok/s=18187 elapsed=1062s
+[28/57] high_school_physics.json seed=0 n=151 shards=50 p_canon=0.127 p_rev=0.677 eff_canon=+0.4181 eff_rev=-0.2128 tok/s=18215 elapsed=1100s
+[29/57] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.0427 p_rev=0.658 eff_canon=+0.4990 eff_rev=-0.0809 tok/s=16788 elapsed=1196s
+[30/57] high_school_statistics.json seed=0 n=216 shards=50 p_canon=0.192 p_rev=0.918 eff_canon=+0.3339 eff_rev=-0.6532 tok/s=17366 elapsed=1265s
+[31/57] high_school_us_history.json seed=0 n=204 shards=50 p_canon=3.12e-09 p_rev=0.993 eff_canon=+17.4430 eff_rev=-6.1571 tok/s=11986 elapsed=1528s
+[32/57] high_school_world_history.json seed=0 n=237 shards=50 p_canon=2.71e-13 p_rev=0.98 eff_canon=+18.6842 eff_rev=-5.4788 tok/s=11231 elapsed=1901s
+[33/57] human_aging.json seed=0 n=223 shards=50 p_canon=0.604 p_rev=0.207 eff_canon=-0.0826 eff_rev=+0.1983 tok/s=18668 elapsed=1926s
+[34/57] human_sexuality.json seed=0 n=131 shards=50 p_canon=0.795 p_rev=0.0939 eff_canon=-0.3305 eff_rev=+0.4153 tok/s=18798 elapsed=1945s
+[35/57] international_law.json seed=0 n=121 shards=50 p_canon=0.553 p_rev=0.898 eff_canon=-0.0294 eff_rev=-0.3695 tok/s=18581 elapsed=1972s
+[36/57] jurisprudence.json seed=0 n=108 shards=50 p_canon=0.91 p_rev=0.226 eff_canon=-0.5528 eff_rev=+0.3414 tok/s=18623 elapsed=1991s
+[37/57] logical_fallacies.json seed=0 n=163 shards=50 p_canon=0.301 p_rev=0.831 eff_canon=+0.4622 eff_rev=-0.4118 tok/s=18592 elapsed=2019s
+[38/57] machine_learning.json seed=0 n=112 shards=50 p_canon=0.0426 p_rev=0.908 eff_canon=+1.1465 eff_rev=-0.7867 tok/s=18618 elapsed=2041s
+[39/57] management.json seed=0 n=103 shards=50 p_canon=0.899 p_rev=0.122 eff_canon=-0.4377 eff_rev=+0.3819 tok/s=19025 elapsed=2051s
+[40/57] marketing.json seed=0 n=234 shards=50 p_canon=0.779 p_rev=0.264 eff_canon=-0.2052 eff_rev=+0.1294 tok/s=18566 elapsed=2083s
+[41/57] medical_genetics.json seed=0 n=100 shards=50 p_canon=0.387 p_rev=0.588 eff_canon=+0.1111 eff_rev=-0.0801 tok/s=18888 elapsed=2096s
+[42/57] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.274 p_rev=0.604 eff_canon=+0.0808 eff_rev=-0.0404 tok/s=16683 elapsed=2194s
+[43/57] moral_disputes.json seed=0 n=346 shards=50 p_canon=0.192 p_rev=0.626 eff_canon=+0.3606 eff_rev=-0.0972 tok/s=17684 elapsed=2255s
+[44/57] moral_scenarios.json seed=0 n=895 shards=50 p_canon=0.567 p_rev=0.812 eff_canon=-0.0180 eff_rev=-0.0785 tok/s=10694 elapsed=2684s
+[45/57] nutrition.json seed=0 n=306 shards=50 p_canon=0.822 p_rev=0.435 eff_canon=-0.2218 eff_rev=+0.0475 tok/s=17756 elapsed=2741s
+[46/57] philosophy.json seed=0 n=311 shards=50 p_canon=0.0458 p_rev=0.617 eff_canon=+0.5602 eff_rev=-0.0665 tok/s=18125 elapsed=2788s
+[47/57] prehistory.json seed=0 n=324 shards=50 p_canon=0.352 p_rev=0.965 eff_canon=+0.0941 eff_rev=-0.4891 tok/s=17956 elapsed=2842s
+[48/57] professional_accounting.json seed=0 n=282 shards=50 p_canon=0.93 p_rev=0.215 eff_canon=-0.5078 eff_rev=+0.2467 tok/s=17314 elapsed=2918s
+[49/57] professional_law.json seed=0 n=1534 shards=50 p_canon=4.28e-31 p_rev=3.11e-08 eff_canon=+23.8653 eff_rev=+2.1258 tok/s=9037 elapsed=5068s
+[50/57] professional_medicine.json seed=0 n=272 shards=50 p_canon=0.00121 p_rev=0.663 eff_canon=+2.2032 eff_rev=-0.1585 tok/s=13973 elapsed=5248s
+[51/57] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.009 p_rev=0.406 eff_canon=+0.6094 eff_rev=+0.0550 tok/s=15585 elapsed=5393s
+[52/57] public_relations.json seed=0 n=110 shards=50 p_canon=0.583 p_rev=0.347 eff_canon=-0.0574 eff_rev=+0.0781 tok/s=18844 elapsed=5408s
+[53/57] security_studies.json seed=0 n=245 shards=50 p_canon=0.067 p_rev=0.523 eff_canon=+0.6029 eff_rev=-0.0407 tok/s=16175 elapsed=5523s
+[54/57] sociology.json seed=0 n=201 shards=50 p_canon=0.668 p_rev=0.684 eff_canon=-0.1119 eff_rev=-0.1498 tok/s=18474 elapsed=5558s
+[55/57] us_foreign_policy.json seed=0 n=100 shards=50 p_canon=0.691 p_rev=0.336 eff_canon=-0.1983 eff_rev=+0.1645 tok/s=18849 elapsed=5572s
+[56/57] virology.json seed=0 n=166 shards=50 p_canon=0.792 p_rev=0.49 eff_canon=-0.3197 eff_rev=+0.0078 tok/s=18702 elapsed=5595s
+[57/57] world_religions.json seed=0 n=171 shards=50 p_canon=0.282 p_rev=0.633 eff_canon=+0.2742 eff_rev=-0.1338 tok/s=18781 elapsed=5611s
+[run_test] model=EleutherAI/pythia-1.4b tag=paper50 files=57 seeds=[0] todo=57
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/57] abstract_algebra.json seed=0 n=100 shards=50 p_canon=0.618 p_rev=0.376 eff_canon=-0.1554 eff_rev=+0.1467 tok/s=32883 elapsed=8s
+[2/57] anatomy.json seed=0 n=135 shards=50 p_canon=0.626 p_rev=0.164 eff_canon=-0.2256 eff_rev=+0.4029 tok/s=33002 elapsed=19s
+[3/57] astronomy.json seed=0 n=152 shards=50 p_canon=0.0544 p_rev=0.368 eff_canon=+0.5141 eff_rev=+0.1938 tok/s=32862 elapsed=35s
+[4/57] business_ethics.json seed=0 n=100 shards=50 p_canon=0.13 p_rev=0.889 eff_canon=+0.4137 eff_rev=-0.4020 tok/s=33094 elapsed=45s
+[5/57] clinical_knowledge.json seed=0 n=265 shards=50 p_canon=0.109 p_rev=0.892 eff_canon=+0.2096 eff_rev=-0.3220 tok/s=32663 elapsed=66s
+[6/57] college_biology.json seed=0 n=144 shards=50 p_canon=0.17 p_rev=0.352 eff_canon=+0.3482 eff_rev=+0.1300 tok/s=32825 elapsed=81s
+[7/57] college_chemistry.json seed=0 n=100 shards=50 p_canon=0.584 p_rev=0.339 eff_canon=-0.0963 eff_rev=+0.1840 tok/s=32863 elapsed=92s
+[8/57] college_computer_science.json seed=0 n=100 shards=50 p_canon=0.416 p_rev=0.648 eff_canon=+0.0936 eff_rev=-0.1550 tok/s=32822 elapsed=108s
+[9/57] college_mathematics.json seed=0 n=100 shards=50 p_canon=0.165 p_rev=0.86 eff_canon=+0.5713 eff_rev=-0.5843 tok/s=32976 elapsed=118s
+[10/57] college_medicine.json seed=0 n=173 shards=50 p_canon=0.317 p_rev=0.915 eff_canon=+0.1641 eff_rev=-0.6265 tok/s=31102 elapsed=146s
+[11/57] college_physics.json seed=0 n=102 shards=50 p_canon=0.974 p_rev=0.0224 eff_canon=-0.6340 eff_rev=+0.6100 tok/s=32913 elapsed=158s
+[12/57] computer_security.json seed=0 n=100 shards=50 p_canon=0.364 p_rev=0.645 eff_canon=+0.1571 eff_rev=-0.1593 tok/s=33026 elapsed=167s
+[13/57] conceptual_physics.json seed=0 n=235 shards=50 p_canon=0.775 p_rev=0.0241 eff_canon=-0.1944 eff_rev=+0.4562 tok/s=32881 elapsed=181s
+[14/57] econometrics.json seed=0 n=114 shards=50 p_canon=0.614 p_rev=0.0584 eff_canon=-0.2739 eff_rev=+0.5816 tok/s=32775 elapsed=198s
+[15/57] electrical_engineering.json seed=0 n=145 shards=50 p_canon=0.551 p_rev=0.594 eff_canon=+0.0176 eff_rev=-0.1084 tok/s=32993 elapsed=206s
+[16/57] elementary_mathematics.json seed=0 n=378 shards=50 p_canon=0.281 p_rev=0.202 eff_canon=+0.1242 eff_rev=+0.2173 tok/s=32294 elapsed=236s
+[17/57] formal_logic.json seed=0 n=126 shards=50 p_canon=0.994 p_rev=0.205 eff_canon=-0.8845 eff_rev=+0.3148 tok/s=32663 elapsed=257s
+[18/57] global_facts.json seed=0 n=100 shards=50 p_canon=0.5 p_rev=0.584 eff_canon=+0.0000 eff_rev=-0.0630 tok/s=33295 elapsed=263s
+[19/57] high_school_biology.json seed=0 n=310 shards=50 p_canon=0.501 p_rev=0.467 eff_canon=-0.0365 eff_rev=+0.0053 tok/s=31937 elapsed=298s
+[20/57] high_school_chemistry.json seed=0 n=203 shards=50 p_canon=0.739 p_rev=0.599 eff_canon=-0.2052 eff_rev=-0.0863 tok/s=32420 elapsed=321s
+[21/57] high_school_computer_science.json seed=0 n=100 shards=50 p_canon=0.0905 p_rev=0.874 eff_canon=+0.7268 eff_rev=-0.5763 tok/s=32575 elapsed=337s
+[22/57] high_school_european_history.json seed=0 n=165 shards=50 p_canon=5.7e-13 p_rev=1 eff_canon=+10.9425 eff_rev=-3.8616 tok/s=27793 elapsed=444s
+[23/57] high_school_geography.json seed=0 n=198 shards=50 p_canon=0.277 p_rev=0.493 eff_canon=+0.1736 eff_rev=+0.0103 tok/s=33030 elapsed=456s
+[24/57] high_school_government_and_politics.json seed=0 n=193 shards=50 p_canon=0.0195 p_rev=0.832 eff_canon=+0.6152 eff_rev=-0.3373 tok/s=32646 elapsed=476s
+[25/57] high_school_macroeconomics.json seed=0 n=390 shards=50 p_canon=0.283 p_rev=0.89 eff_canon=+0.1079 eff_rev=-0.1880 tok/s=31952 elapsed=512s
+[26/57] high_school_mathematics.json seed=0 n=270 shards=50 p_canon=0.000391 p_rev=0.232 eff_canon=+0.8345 eff_rev=+0.2456 tok/s=32557 elapsed=537s
+[27/57] high_school_microeconomics.json seed=0 n=238 shards=50 p_canon=0.651 p_rev=0.588 eff_canon=-0.1013 eff_rev=-0.0379 tok/s=32539 elapsed=561s
+[28/57] high_school_physics.json seed=0 n=151 shards=50 p_canon=0.179 p_rev=0.855 eff_canon=+0.4537 eff_rev=-0.4756 tok/s=32236 elapsed=582s
+[29/57] high_school_psychology.json seed=0 n=545 shards=50 p_canon=0.00297 p_rev=0.603 eff_canon=+0.9250 eff_rev=-0.0627 tok/s=31328 elapsed=634s
+[30/57] high_school_statistics.json seed=0 n=216 shards=50 p_canon=0.169 p_rev=0.791 eff_canon=+0.4384 eff_rev=-0.3475 tok/s=31944 elapsed=671s
+[31/57] high_school_us_history.json seed=0 n=204 shards=50 p_canon=9.84e-24 p_rev=1 eff_canon=+17.5101 eff_rev=-4.0938 tok/s=28674 elapsed=782s
+[32/57] high_school_world_history.json seed=0 n=237 shards=50 p_canon=1.07e-16 p_rev=0.999 eff_canon=+18.1018 eff_rev=-2.8817 tok/s=24754 elapsed=954s
+[33/57] human_aging.json seed=0 n=223 shards=50 p_canon=0.541 p_rev=0.314 eff_canon=-0.0612 eff_rev=+0.1632 tok/s=32892 elapsed=969s
+[34/57] human_sexuality.json seed=0 n=131 shards=50 p_canon=0.576 p_rev=0.923 eff_canon=-0.0500 eff_rev=-0.3313 tok/s=33148 elapsed=979s
+[35/57] international_law.json seed=0 n=121 shards=50 p_canon=0.479 p_rev=0.985 eff_canon=+0.0802 eff_rev=-0.7477 tok/s=32926 elapsed=995s
+[36/57] jurisprudence.json seed=0 n=108 shards=50 p_canon=0.851 p_rev=0.208 eff_canon=-0.3786 eff_rev=+0.3378 tok/s=33006 elapsed=1005s
+[37/57] logical_fallacies.json seed=0 n=163 shards=50 p_canon=0.0373 p_rev=0.712 eff_canon=+0.9175 eff_rev=-0.2624 tok/s=32797 elapsed=1021s
+[38/57] machine_learning.json seed=0 n=112 shards=50 p_canon=0.353 p_rev=0.288 eff_canon=+0.0961 eff_rev=+0.2401 tok/s=33039 elapsed=1033s
+[39/57] management.json seed=0 n=103 shards=50 p_canon=0.479 p_rev=0.569 eff_canon=+0.0241 eff_rev=-0.0545 tok/s=33300 elapsed=1039s
+[40/57] marketing.json seed=0 n=234 shards=50 p_canon=0.949 p_rev=0.13 eff_canon=-0.3662 eff_rev=+0.2440 tok/s=32828 elapsed=1057s
+[41/57] medical_genetics.json seed=0 n=100 shards=50 p_canon=0.522 p_rev=0.464 eff_canon=-0.0183 eff_rev=+0.0276 tok/s=33196 elapsed=1064s
+[42/57] miscellaneous.json seed=0 n=783 shards=50 p_canon=0.0881 p_rev=0.69 eff_canon=+0.2118 eff_rev=-0.0719 tok/s=31151 elapsed=1117s
+[43/57] moral_disputes.json seed=0 n=346 shards=50 p_canon=0.0887 p_rev=0.782 eff_canon=+0.5056 eff_rev=-0.2057 tok/s=32031 elapsed=1152s
+[44/57] moral_scenarios.json seed=0 n=895 shards=50 p_canon=0.141 p_rev=0.917 eff_canon=+0.0694 eff_rev=-0.0725 tok/s=24572 elapsed=1339s
+[45/57] nutrition.json seed=0 n=306 shards=50 p_canon=0.369 p_rev=0.341 eff_canon=+0.0926 eff_rev=+0.1051 tok/s=32370 elapsed=1370s
+[46/57] philosophy.json seed=0 n=311 shards=50 p_canon=0.00121 p_rev=0.973 eff_canon=+1.0619 eff_rev=-0.4850 tok/s=32454 elapsed=1395s
+[47/57] prehistory.json seed=0 n=324 shards=50 p_canon=0.0625 p_rev=0.969 eff_canon=+0.3801 eff_rev=-0.5253 tok/s=32299 elapsed=1426s
+[48/57] professional_accounting.json seed=0 n=282 shards=50 p_canon=0.17 p_rev=0.566 eff_canon=+0.2121 eff_rev=-0.0330 tok/s=31822 elapsed=1467s
+[49/57] professional_law.json seed=0 n=1534 shards=50 p_canon=2.82e-32 p_rev=1.45e-05 eff_canon=+23.5220 eff_rev=+1.2336 tok/s=14730 elapsed=2793s
+[50/57] professional_medicine.json seed=0 n=272 shards=50 p_canon=0.000818 p_rev=0.996 eff_canon=+2.5580 eff_rev=-1.1864 tok/s=30150 elapsed=2874s
+[51/57] professional_psychology.json seed=0 n=612 shards=50 p_canon=0.0577 p_rev=0.0986 eff_canon=+0.3618 eff_rev=+0.2171 tok/s=30481 elapsed=2948s
+[52/57] public_relations.json seed=0 n=110 shards=50 p_canon=0.185 p_rev=0.638 eff_canon=+0.3880 eff_rev=-0.2002 tok/s=33027 elapsed=2956s
+[53/57] security_studies.json seed=0 n=245 shards=50 p_canon=0.748 p_rev=0.707 eff_canon=-0.1713 eff_rev=-0.1742 tok/s=30867 elapsed=3017s
+[54/57] sociology.json seed=0 n=201 shards=50 p_canon=0.224 p_rev=0.395 eff_canon=+0.2084 eff_rev=+0.0566 tok/s=32809 elapsed=3037s
+[55/57] us_foreign_policy.json seed=0 n=100 shards=50 p_canon=0.781 p_rev=0.219 eff_canon=-0.2479 eff_rev=+0.2317 tok/s=33222 elapsed=3045s
+[56/57] virology.json seed=0 n=166 shards=50 p_canon=0.284 p_rev=0.831 eff_canon=+0.1696 eff_rev=-0.3265 tok/s=33075 elapsed=3058s
+[57/57] world_religions.json seed=0 n=171 shards=50 p_canon=0.9 p_rev=0.462 eff_canon=-0.3637 eff_rev=+0.0031 tok/s=33176 elapsed=3067s
+===== STAGE mmlu_p50 end   2026-11-15T23:16:32Z rc=0 =====
+===== STAGE canary_clean start 2026-11-15T23:16:32Z =====
+[run_test] model=gpt2-xl tag=paper50 files=10 seeds=[0] todo=10
+[run_test] loaded gpt2-xl: 1558M params, context=1024, stride=512, dtype=tf32
+[scorer] OOM -> max_batch_tokens=2048
+[1/10] boolq.jsonl seed=0 n=1000 shards=50 p_canon=0.937 p_rev=0.523 eff_canon=-0.2501 eff_rev=-0.0095 tok/s=9729 elapsed=839s
+[2/10] hellaswag.jsonl seed=0 n=1000 shards=50 p_canon=0.917 p_rev=0.583 eff_canon=-0.7720 eff_rev=-0.1023 tok/s=9241 elapsed=2324s
+[3/10] mmlu_high_school_psychology.jsonl seed=0 n=544 shards=50 p_canon=0.224 p_rev=0.675 eff_canon=+0.1497 eff_rev=-0.0883 tok/s=15533 elapsed=2473s
+[4/10] mmlu_professional_law.jsonl seed=0 n=1533 shards=50 p_canon=0.205 p_rev=0.51 eff_canon=+0.1962 eff_rev=-0.0063 tok/s=9009 elapsed=4842s
+[5/10] mmlu_professional_psychology.jsonl seed=0 n=611 shards=50 p_canon=0.911 p_rev=0.00468 eff_canon=-0.2331 eff_rev=+0.4780 tok/s=11924 elapsed=5100s
+[6/10] mnli.jsonl seed=0 n=1000 shards=50 p_canon=0.448 p_rev=0.35 eff_canon=+0.1846 eff_rev=+0.5240 tok/s=8994 elapsed=7734s
+[7/10] naturalquestions.jsonl seed=0 n=1000 shards=50 p_canon=0.173 p_rev=0.374 eff_canon=+0.1177 eff_rev=+0.0430 tok/s=10510 elapsed=8240s
+[8/10] openbookqa.jsonl seed=0 n=500 shards=50 p_canon=0.412 p_rev=0.496 eff_canon=+0.0524 eff_rev=+0.0018 tok/s=16171 elapsed=8355s
+[9/10] piqa.jsonl seed=0 n=1000 shards=50 p_canon=0.649 p_rev=0.115 eff_canon=-0.0390 eff_rev=+0.1407 tok/s=11593 elapsed=8672s
+[10/10] truthfulqa.jsonl seed=0 n=1000 shards=50 p_canon=0.514 p_rev=0.344 eff_canon=-0.0026 eff_rev=+0.0373 tok/s=15500 elapsed=8831s
+[run_test] model=EleutherAI/pythia-1.4b tag=paper50 files=10 seeds=[0] todo=10
+[run_test] loaded EleutherAI/pythia-1.4b: 1415M params, context=2048, stride=1024, dtype=tf32
+[1/10] boolq.jsonl seed=0 n=1000 shards=50 p_canon=0.746 p_rev=0.986 eff_canon=-0.1075 eff_rev=-0.2719 tok/s=17414 elapsed=474s
+[2/10] hellaswag.jsonl seed=0 n=1000 shards=50 p_canon=0.428 p_rev=0.181 eff_canon=+0.0531 eff_rev=+0.2683 tok/s=15592 elapsed=1358s
+[3/10] mmlu_high_school_psychology.jsonl seed=0 n=544 shards=50 p_canon=0.599 p_rev=0.838 eff_canon=-0.0425 eff_rev=-0.1514 tok/s=30431 elapsed=1433s
+[4/10] mmlu_professional_law.jsonl seed=0 n=1533 shards=50 p_canon=0.305 p_rev=0.24 eff_canon=+0.1381 eff_rev=+0.1406 tok/s=14676 elapsed=2893s
+[5/10] mmlu_professional_psychology.jsonl seed=0 n=611 shards=50 p_canon=0.755 p_rev=0.12 eff_canon=-0.1196 eff_rev=+0.1729 tok/s=29224 elapsed=2998s
+[6/10] mnli.jsonl seed=0 n=1000 shards=50 p_canon=0.518 p_rev=0.57 eff_canon=-0.0222 eff_rev=-0.0752 tok/s=14519 elapsed=4594s
+[7/10] naturalquestions.jsonl seed=0 n=1000 shards=50 p_canon=0.544 p_rev=0.758 eff_canon=-0.0107 eff_rev=-0.0674 tok/s=21633 elapsed=4838s
+[8/10] openbookqa.jsonl seed=0 n=500 shards=50 p_canon=0.683 p_rev=0.0699 eff_canon=-0.0499 eff_rev=+0.1458 tok/s=30890 elapsed=4902s
+[9/10] piqa.jsonl seed=0 n=1000 shards=50 p_canon=0.538 p_rev=0.392 eff_canon=-0.0069 eff_rev=+0.0267 tok/s=27184 elapsed=5037s
+[10/10] truthfulqa.jsonl seed=0 n=1000 shards=50 p_canon=0.595 p_rev=0.0365 eff_canon=-0.0148 eff_rev=+0.1350 tok/s=30409 elapsed=5112s
+===== STAGE canary_clean end   2026-11-16T03:09:14Z rc=0 =====
+===== STAGE canary_fp32 start 2026-11-16T03:09:14Z =====
+[run_test] model=yonatano/contam-1.4b-dupcount-higher tag=paper50_fp32 files=5 seeds=[0] todo=5
+[run_test] loaded yonatano/contam-1.4b-dupcount-higher: 1440M params, context=2048, stride=1024, dtype=fp32
+[1/5] piqa.jsonl seed=0 n=1000 shards=50 p_canon=2.61e-38 p_rev=1 eff_canon=+9.5196 eff_rev=-2.7740 tok/s=5114 elapsed=719s
+[scorer] OOM -> max_batch_tokens=2048
+[2/5] truthfulqa.jsonl seed=0 n=1000 shards=50 p_canon=9.64e-13 p_rev=1 eff_canon=+0.8516 eff_rev=-0.3427 tok/s=5217 elapsed=1191s
+[3/5] openbookqa.jsonl seed=0 n=500 shards=50 p_canon=0.556 p_rev=0.749 eff_canon=-0.0324 eff_rev=-0.1765 tok/s=5183 elapsed=1550s
+[4/5] mmlu_high_school_psychology.jsonl seed=0 n=544 shards=50 p_canon=1.26e-29 p_rev=1 eff_canon=+8.8141 eff_rev=-3.3545 tok/s=5188 elapsed=1996s
+[5/5] mmlu_professional_psychology.jsonl seed=0 n=611 shards=50 p_canon=7.9e-36 p_rev=1 eff_canon=+8.6321 eff_rev=-3.1084 tok/s=5006 elapsed=2610s
+===== STAGE canary_fp32 end   2026-11-16T03:52:56Z rc=0 =====
+===== QUEUE DONE 2026-11-16T03:52:56Z =====

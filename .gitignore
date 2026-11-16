@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.tmp
+# generated control orderings and repaired MMLU files: derived from benchmark test sets, so not
+# re-published here; regenerate with make_orderings.py and mmlu_fragments.py (deterministic)
+results/controls_data.tar.gz
